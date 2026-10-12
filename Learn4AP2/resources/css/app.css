@@ -355,6 +355,33 @@ p {
     margin-top: var(--space-4);
 }
 
+.filter-panel {
+    margin-block: var(--space-6);
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+    gap: 0 var(--space-4);
+}
+
+.filter-grid .form-field {
+    margin-block: var(--space-2) var(--space-4);
+}
+
+.card-table {
+    min-width: 48rem;
+}
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-block: var(--space-6);
+}
+
 @media (max-width: 600px) {
     .site-header {
         align-items: flex-start;

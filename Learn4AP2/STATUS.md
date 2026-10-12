@@ -5,8 +5,8 @@
 
 ## Aktuell
 
-- **Aktuelles Ticket:** T-031 – Kartenliste mit Filter
-- **Nächstes Ticket:** T-031
+- **Aktuelles Ticket:** T-032 – Karte bearbeiten / anlegen / löschen (P2)
+- **Nächstes Ticket:** T-032
 - **Blockiert:** –
 - **Letzte Sitzung:** –
 
@@ -41,7 +41,7 @@
 
 ### E3 – Kartenverwaltung
 - [x] T-030 Deck-Übersicht
-- [ ] T-031 Kartenliste mit Filter
+- [x] T-031 Kartenliste mit Filter
 - [ ] T-032 Karte bearbeiten (P2)
 
 ### E4 – Lernmodi
@@ -98,6 +98,7 @@ _Agent trägt hier Fragen an Philipp ein. Format: `- [T-XXX] Frage – getroffen
 
 _Neueste oben. Eine Zeile pro Sitzung._
 
+- 2026-10-12 – T-031 abgeschlossen; URL-Filter, Kartenfelder und 25er-Pagination getestet. Weiter mit T-032.
 - 2026-10-12 – T-030 abgeschlossen; Deckwerte, Fortschritt, Umbenennen und Löschen getestet. Weiter mit T-031.
 - 2026-10-12 – T-024 abgeschlossen; Beispieldeck und Wiederholbarkeit getestet. Weiter mit T-030.
 - 2026-10-12 – T-023 abgeschlossen; Upload, Vorschau, Importschritt und Historie getestet. Weiter mit T-024.

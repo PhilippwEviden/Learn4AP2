@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\CardIndex;
 use App\Livewire\DeckIndex;
 use App\Livewire\ImportPage;
 use Illuminate\Support\Facades\Route;
@@ -10,3 +11,4 @@ Route::get('/', function () {
 
 Route::get('/import', ImportPage::class)->name('import');
 Route::get('/decks', DeckIndex::class)->name('decks.index');
+Route::get('/cards', CardIndex::class)->name('cards.index');
