@@ -104,7 +104,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `database/factories/ImportFactory.php` | Testfabrik für Import-Protokolle | T-012 | vorhanden |
 | `docs/beispiel.csv` | Beispielkarten im verbindlichen 12-Spalten-Format | T-020 | vorhanden |
 | `tests/Fixtures/csv/*.csv` | CSV-Parser-Fixtures | T-020 | vorhanden |
-| `database/seeders/DatabaseSeeder.php` | importiert `docs/beispiel.csv` | T-024 | geplant |
+| `database/seeders/DatabaseSeeder.php` | importiert `docs/beispiel.csv` über Parser und Import-Action | T-024 | vorhanden |
 
 ## Tests
 
@@ -118,6 +118,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `tests/Unit/Import/CsvCardParserTest.php` | Parser | T-021 | vorhanden |
 | `tests/Feature/Import/ImportCardsTest.php` | Upsert, Fortschritt bleibt | T-022 | vorhanden |
 | `tests/Feature/Livewire/ImportPageTest.php` | Upload → Vorschau → Import | T-023 | geplant |
+| `tests/Feature/DatabaseSeederTest.php` | Beispieldeck importieren und wiederholt seeden | T-024 | vorhanden |
 | `tests/Unit/Study/LeitnerSchedulerTest.php` | Intervalle | T-040 | geplant |
 | `tests/Unit/Study/CardSelectorTest.php` | Auswahl/Reihenfolge | T-040 | geplant |
 | `tests/Unit/Study/MultipleChoiceBuilderTest.php` | Optionen + Fallback | T-043 | geplant |

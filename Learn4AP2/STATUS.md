@@ -5,8 +5,8 @@
 
 ## Aktuell
 
-- **Aktuelles Ticket:** T-024 – Seeder mit Beispieldeck
-- **Nächstes Ticket:** T-024
+- **Aktuelles Ticket:** T-030 – Deck-Übersicht
+- **Nächstes Ticket:** T-030
 - **Blockiert:** –
 - **Letzte Sitzung:** –
 
@@ -37,7 +37,7 @@
 - [x] T-021 CsvCardParser
 - [x] T-022 ImportCardsAction
 - [x] T-023 Import-Seite
-- [ ] T-024 Seeder
+- [x] T-024 Seeder
 
 ### E3 – Kartenverwaltung
 - [ ] T-030 Deck-Übersicht
@@ -98,6 +98,7 @@ _Agent trägt hier Fragen an Philipp ein. Format: `- [T-XXX] Frage – getroffen
 
 _Neueste oben. Eine Zeile pro Sitzung._
 
+- 2026-10-12 – T-024 abgeschlossen; Beispieldeck und Wiederholbarkeit getestet. Weiter mit T-030.
 - 2026-10-12 – T-023 abgeschlossen; Upload, Vorschau, Importschritt und Historie getestet. Weiter mit T-024.
 - 2026-10-12 – T-022 abgeschlossen; Upsert-Feature-Tests, Gesamttests und Pint bestanden. Weiter mit T-023.
 - 2026-10-12 – T-021 abgeschlossen; Parser-Tests und Pint bestanden. Weiter mit T-022.

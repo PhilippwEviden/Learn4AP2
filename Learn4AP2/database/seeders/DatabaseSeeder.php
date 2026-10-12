@@ -2,24 +2,30 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Actions\ImportCards;
+use App\Models\Deck;
+use App\Services\Import\CsvCardParser;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use RuntimeException;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
-    public function run(): void
+    public function run(CsvCardParser $parser, ImportCards $action): void
     {
-        // User::factory(10)->create();
+        $result = $parser->parse(base_path('docs/beispiel.csv'));
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        if ($result->errors !== [] || $result->rows === []) {
+            throw new RuntimeException('Die Beispiel-CSV enthält Fehler oder keine gültigen Karten.');
+        }
+
+        DB::transaction(function () use ($action, $result): void {
+            $deck = Deck::query()->firstOrCreate(
+                ['name' => 'Beispiel'],
+                ['description' => 'Beispielkarten für die AP2-Vorbereitung.']
+            );
+
+            $action->handle($deck, $result, 'beispiel.csv');
+        });
     }
 }
