@@ -884,6 +884,63 @@ p {
     padding: var(--space-4);
 }
 
+.study-statistics {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.statistics-section {
+    padding: var(--space-4);
+}
+
+.statistics-bars {
+    display: grid;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.statistics-bars li {
+    display: grid;
+    grid-template-columns: 5rem minmax(0, 1fr) 4rem;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.statistics-bars li > span {
+    overflow-wrap: anywhere;
+}
+
+.statistics-bars strong {
+    text-align: right;
+}
+
+.statistics-bar {
+    height: 0.9rem;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    background: var(--color-accent);
+}
+
+.statistics-bar span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--color-primary);
+}
+
+@media (max-width: 600px) {
+    .statistics-bars li {
+        grid-template-columns: 3.5rem minmax(0, 1fr) 3rem;
+        gap: var(--space-2);
+    }
+
+    .topic-statistics li {
+        grid-template-columns: minmax(5rem, 1fr) minmax(4rem, 2fr) 3rem;
+    }
+}
+
 .matching-item:disabled {
     opacity: 1;
     cursor: default;

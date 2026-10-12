@@ -62,7 +62,10 @@
     <section class="dashboard-sessions" aria-labelledby="recent-sessions-heading">
         <header class="dashboard-section-heading">
             <h2 id="recent-sessions-heading">Letzte Lerneinheiten</h2>
-            <a href="{{ route('problems.index') }}">Problemkarten ansehen</a>
+            <nav aria-label="Weitere Lernübersichten">
+                <a href="{{ route('problems.index') }}">Problemkarten ansehen</a>
+                <a href="{{ route('statistics.index') }}">Statistik über Zeit</a>
+            </nav>
         </header>
 
         @if ($dashboard->recentSessions->isEmpty())

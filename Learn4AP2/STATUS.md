@@ -5,8 +5,8 @@
 
 ## Aktuell
 
-- **Aktuelles Ticket:** T-052 – Statistik über Zeit
-- **Nächstes Ticket:** T-052
+- **Aktuelles Ticket:** T-060 – Prüfungssimulation
+- **Nächstes Ticket:** T-060
 - **Blockiert:** –
 - **Letzte Sitzung:** –
 
@@ -56,7 +56,7 @@
 ### E5 – Dashboard
 - [x] T-050 Dashboard
 - [x] T-051 Problemkarten (P2)
-- [ ] T-052 Statistik über Zeit (P3)
+- [x] T-052 Statistik über Zeit (P3)
 
 ### E6 – Ideen
 - [ ] T-060 Prüfungssimulation (P2)
@@ -104,6 +104,7 @@ _Neueste oben. Eine Zeile pro Sitzung._
 - 2026-10-12 – T-046 abgeschlossen; Shortcut-Dialog, Tastatursteuerung ohne Konflikte mit nativer Button-Bedienung, sichtbarer Fokus und Live-Feedback. Weiter mit T-050.
 - 2026-10-12 – T-050 abgeschlossen; Dashboard mit AP2-Countdown (Datum optional konfigurierbar), fälligen Karten, Leitner-Verteilung und den letzten fünf Sessions. Weiter mit T-051.
 - 2026-10-12 – T-051 abgeschlossen; Problemkarten ab drei Versuchen, nach Fehlerquote sortiert, mit Bereichsfilter und gefiltertem Übungsstart. Weiter mit T-052.
+- 2026-10-12 – T-052 abgeschlossen; tägliche Antwortanzahl der letzten 30 Tage samt Nulltagen und Quote pro Thema als zugängliche CSS-Balken. Weiter mit T-060.
 - 2026-10-12 – T-043 abgeschlossen; Distraktor-Fallback, vier Optionen, Sofortfeedback und Tastatur getestet. Weiter mit T-044.
 - 2026-10-12 – T-042 abgeschlossen; Karten-Flip, Bewertung per Tastatur, Abbruch und Abschluss getestet. Weiter mit T-043.
 - 2026-10-12 – T-041 abgeschlossen; Moduswahl, Filter, Kartenzahl und Sessionstart getestet. Weiter mit T-042.

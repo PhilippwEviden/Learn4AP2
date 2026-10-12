@@ -11,6 +11,7 @@ use App\Livewire\Study\Matching;
 use App\Livewire\Study\MultipleChoice;
 use App\Livewire\Study\Summary;
 use App\Livewire\StudyStart;
+use App\Livewire\StudyStats;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', Dashboard::class)->name('dashboard');
@@ -22,6 +23,7 @@ Route::get('/cards/create', CardForm::class)->name('cards.create');
 Route::get('/cards/{card}/edit', CardForm::class)->name('cards.edit');
 Route::get('/study', StudyStart::class)->name('study.start');
 Route::get('/problems', ProblemCards::class)->name('problems.index');
+Route::get('/statistics', StudyStats::class)->name('statistics.index');
 Route::get('/study/{session}/classic', Classic::class)->name('study.classic');
 Route::get('/study/{session}/multiple-choice', MultipleChoice::class)->name('study.multiple-choice');
 Route::get('/study/{session}/matching', Matching::class)->name('study.matching');
