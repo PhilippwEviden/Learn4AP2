@@ -5,8 +5,8 @@
 
 ## Aktuell
 
-- **Aktuelles Ticket:** T-011 – Deck, Card, CardProgress
-- **Nächstes Ticket:** T-012
+- **Aktuelles Ticket:** T-012 – StudySession, SessionAnswer, Import
+- **Nächstes Ticket:** T-020
 - **Blockiert:** –
 - **Letzte Sitzung:** –
 
@@ -29,7 +29,7 @@
 
 ### E1 – Datenmodell
 - [x] T-010 Enums
-- [ ] T-011 Deck, Card, CardProgress
+- [x] T-011 Deck, Card, CardProgress
 - [ ] T-012 StudySession, SessionAnswer, Import
 
 ### E2 – Import
@@ -83,6 +83,7 @@
 | 2026-10-12 | Freigabe für Vite-NPM-Tooling in T-001 erteilt | Laravel-Assets ohne Tailwind bauen |
 | 2026-10-12 | App-Layout mit responsivem CSS und System-Farbmodus | Ohne UI-Framework, nutzbar ab 375 px |
 | 2026-10-12 | Enums als typisierte Backed Enums mit deutschen Labels | Exam-Bereiche und Lernmodi als String-, Schwierigkeit als Integer-Enum |
+| 2026-10-12 | CardProgress wird über CardObserver automatisch angelegt | Jede Karte startet unmittelbar in Leitner-Fach 1 |
 
 ## Offene Fragen
 
@@ -94,4 +95,4 @@ _Agent trägt hier Fragen an Philipp ein. Format: `- [T-XXX] Frage – getroffen
 
 _Neueste oben. Eine Zeile pro Sitzung._
 
-- 2026-10-12 – T-010 abgeschlossen; Labels und tryFrom für alle drei Enums getestet.
+- 2026-10-12 – T-011 abgeschlossen; Migrationen, Modelle, Scopes und Fortschritts-Observer getestet.

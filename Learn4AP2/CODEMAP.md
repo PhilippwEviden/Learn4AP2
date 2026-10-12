@@ -41,10 +41,10 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `app/Enums/ExamArea.php` | GA1, GA2, WISO + deutsche Labels | T-010 | vorhanden |
 | `app/Enums/StudyMode.php` | classic, multiple_choice, matching, exam + deutsche Labels | T-010 | vorhanden |
 | `app/Enums/Difficulty.php` | Stufen 1–3 + deutsche Labels | T-010 | vorhanden |
-| `app/Models/Deck.php` | Deck, hasMany Card | T-011 | geplant |
-| `app/Models/Card.php` | Karte, Scopes `area/topic/tag/search/due` | T-011 | geplant |
-| `app/Models/CardProgress.php` | Leitner-Fach, due_at, Zähler | T-011 | geplant |
-| `app/Observers/CardObserver.php` | legt CardProgress an | T-011 | geplant |
+| `app/Models/Deck.php` | Deck, hasMany Card | T-011 | vorhanden |
+| `app/Models/Card.php` | Karte, Enum-/JSON-Casts, Beziehungen und Scopes `area/topic/tag/search/due` | T-011 | vorhanden |
+| `app/Models/CardProgress.php` | Leitner-Fach, due_at, Zähler | T-011 | vorhanden |
+| `app/Observers/CardObserver.php` | legt CardProgress an | T-011 | vorhanden |
 | `app/Models/StudySession.php` | Lernsitzung | T-012 | geplant |
 | `app/Models/SessionAnswer.php` | Einzelantwort | T-012 | geplant |
 | `app/Models/Import.php` | Import-Protokoll | T-012 | geplant |
@@ -89,18 +89,21 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 
 | Pfad | Inhalt | Ticket | Status |
 |---|---|---|---|
-| `database/migrations/*_create_decks_table.php` | | T-011 | geplant |
-| `database/migrations/*_create_cards_table.php` | | T-011 | geplant |
-| `database/migrations/*_create_card_progress_table.php` | | T-011 | geplant |
+| `database/migrations/*_create_decks_table.php` | Deck-Tabelle | T-011 | vorhanden |
+| `database/migrations/*_create_cards_table.php` | Karten, Enum-/JSON-Spalten und Deck-/ID-Eindeutigkeit | T-011 | vorhanden |
+| `database/migrations/*_create_card_progress_table.php` | 1:1-Leitner-Fortschritt je Karte | T-011 | vorhanden |
 | `database/migrations/*_create_study_sessions_table.php` | | T-012 | geplant |
 | `database/migrations/*_create_session_answers_table.php` | | T-012 | geplant |
 | `database/migrations/*_create_imports_table.php` | | T-012 | geplant |
+| `database/factories/DeckFactory.php` | Testdeck-Fabrik | T-011 | vorhanden |
+| `database/factories/CardFactory.php` | Testkarten-Fabrik | T-011 | vorhanden |
 | `database/seeders/DatabaseSeeder.php` | importiert `docs/beispiel.csv` | T-024 | geplant |
 
 ## Tests
 
 | Pfad | Inhalt | Ticket | Status |
 |---|---|---|---|
+| `tests/Feature/CardModelTest.php` | Beziehungen, Observer, Casts, Scopes und Cascade-Delete | T-011 | vorhanden |
 | `tests/Feature/LayoutTest.php` | Layout, Text-Komponente und responsive Design-Tokens | T-002 | vorhanden |
 | `tests/Fixtures/csv/*.csv` | gültige/fehlerhafte CSVs | T-020 | geplant |
 | `tests/Unit/Enums/EnumTest.php` | Enum-Labels und Backed-Value-Auflösung | T-010 | vorhanden |
