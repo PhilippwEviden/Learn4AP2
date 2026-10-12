@@ -33,8 +33,10 @@ it('renders four selectable answer options for the current card', function () {
         ->assertSee('Antwortmöglichkeiten')
         ->assertSet('options', fn (array $options): bool => count($options) === 4)
         ->assertSeeHtml('wire:click="choose(0)"')
-        ->assertSeeHtml('wire:keydown.window.1.prevent="choose(0)"')
-        ->assertSee('Karte 1 von 2');
+        ->assertSeeHtml('x-on:keydown.window')
+        ->assertSee('Karte 1 von 2')
+        ->assertSee('Tastaturhilfe')
+        ->assertSee('Enter');
 });
 
 it('immediately displays correctness, the full explanation and disables the options', function () {
@@ -47,6 +49,7 @@ it('immediately displays correctness, the full explanation and disables the opti
     $component->call('choose', $correctIndex)
         ->assertSet('wasCorrect', true)
         ->assertSee('Richtig!')
+        ->assertSeeHtml('aria-live="polite"')
         ->assertSee($card->answer)
         ->assertSeeHtml('disabled');
 

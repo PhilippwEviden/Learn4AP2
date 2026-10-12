@@ -42,6 +42,9 @@ it('renders six question and answer pairs with a timer and score counters', func
         ->assertSee('Combo:')
         ->assertSee('Matching Frage 0')
         ->assertSee('Matching Antwort 0')
+        ->assertSee('Tastaturhilfe')
+        ->assertSee('Enter / Leertaste')
+        ->assertSeeHtml('aria-live="polite"')
         ->assertSet('questionItems', fn (array $items): bool => count($items) === 6)
         ->assertSet('answerItems', fn (array $items): bool => count($items) === 6);
 });

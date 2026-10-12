@@ -1,10 +1,20 @@
 <section
     class="classic-study"
-    wire:keydown.window.space.prevent="flip"
-    wire:keydown.window.arrowright="markCorrect"
-    wire:keydown.window.arrowleft="markIncorrect"
-    wire:keydown.window.j="markCorrect"
-    wire:keydown.window.n="markIncorrect"
+    x-data
+    x-on:keydown.window="
+        const target = $event.target;
+        if (target.closest && target.closest('dialog, button, a, input, textarea, select, [contenteditable=true]')) return;
+        if ($event.key === ' ') {
+            $event.preventDefault();
+            $wire.flip();
+        } else if ($event.key === 'ArrowRight' || $event.key.toLowerCase() === 'j') {
+            $event.preventDefault();
+            $wire.markCorrect();
+        } else if ($event.key === 'ArrowLeft' || $event.key.toLowerCase() === 'n') {
+            $event.preventDefault();
+            $wire.markIncorrect();
+        }
+    "
 >
     <header class="study-session-header">
         <div>
@@ -57,6 +67,11 @@
     @error('answer')
         <p class="alert--error" role="alert">{{ $message }}</p>
     @enderror
-    <p class="study-feedback" role="status">{{ $feedback }}</p>
+    <p class="study-feedback" role="status" aria-live="polite" aria-atomic="true">{{ $feedback }}</p>
     <p class="shortcut-hint">Tastatur: Leertaste dreht um · → / J gewusst · ← / N nicht gewusst</p>
+    <x-study-shortcut-help :shortcuts="[
+        'Leertaste' => 'Antwort umdrehen',
+        '→ / J' => 'Als gewusst bewerten',
+        '← / N' => 'Als nicht gewusst bewerten',
+    ]" />
 </section>

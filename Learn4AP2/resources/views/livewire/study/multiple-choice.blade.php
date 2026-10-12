@@ -1,10 +1,20 @@
 <section
     class="multiple-choice-study"
-    wire:keydown.window.1.prevent="choose(0)"
-    wire:keydown.window.2.prevent="choose(1)"
-    wire:keydown.window.3.prevent="choose(2)"
-    wire:keydown.window.4.prevent="choose(3)"
-    wire:keydown.window.enter.prevent="next"
+    x-data
+    x-on:keydown.window="
+        const target = $event.target;
+        if (target.closest && target.closest('dialog')) return;
+        const focusedChoice = target.closest && target.closest('.choice-option');
+        const focusedInteractive = target.closest && target.closest('button, a, input, textarea, select, [contenteditable=true]');
+        if (focusedInteractive && !focusedChoice) return;
+        if (/^[1-4]$/.test($event.key)) {
+            $event.preventDefault();
+            $wire.choose(Number($event.key) - 1);
+        } else if ($event.key === 'Enter' && !focusedInteractive) {
+            $event.preventDefault();
+            $wire.next();
+        }
+    "
 >
     <header class="study-session-header">
         <div>
@@ -57,7 +67,7 @@
             @enderror
 
             @if ($selectedIndex !== null)
-                <div class="choice-feedback {{ $wasCorrect ? 'alert--success' : 'alert--error' }}" role="status">
+                <div class="choice-feedback {{ $wasCorrect ? 'alert--success' : 'alert--error' }}" role="status" aria-live="polite" aria-atomic="true">
                     <strong>{{ $feedback }}</strong>
                     <p><strong>Erklärung:</strong> {{ $explanation }}</p>
                 </div>
@@ -70,4 +80,8 @@
     @endif
 
     <p class="shortcut-hint">Tastatur: 1–4 Antwort wählen · Enter weiter</p>
+    <x-study-shortcut-help :shortcuts="[
+        '1–4' => 'Antwort auswählen',
+        'Enter' => 'Zur nächsten Frage wechseln',
+    ]" />
 </section>

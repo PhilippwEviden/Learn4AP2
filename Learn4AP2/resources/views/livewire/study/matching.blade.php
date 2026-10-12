@@ -79,7 +79,7 @@
         </section>
     </div>
 
-    <p class="matching-feedback" role="status">{{ $feedback }}</p>
+    <p class="matching-feedback" role="status" aria-live="polite" aria-atomic="true">{{ $feedback }}</p>
 
     @if ($roundComplete)
         <section class="card matching-round-result" aria-labelledby="matching-round-result-heading">
@@ -90,6 +90,13 @@
             @else
                 <button class="btn btn--primary" type="button" wire:click="nextRound">Zusammenfassung öffnen</button>
             @endif
+
         </section>
     @endif
+
+    <p class="shortcut-hint">Tastatur: Mit Tab zu Frage und Kurzantwort wechseln · Enter oder Leertaste auswählen</p>
+    <x-study-shortcut-help :shortcuts="[
+        'Tab' => 'Zwischen Fragen und Kurzantworten wechseln',
+        'Enter / Leertaste' => 'Ausgewählte Frage oder Antwort aktivieren',
+    ]" />
 </section>

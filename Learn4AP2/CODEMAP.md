@@ -97,6 +97,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `resources/views/livewire/study/multiple-choice.blade.php` | Vier Antwortoptionen mit Sofortfeedback und Erklärung | T-043 | vorhanden |
 | `resources/views/livewire/study/matching.blade.php` | Zuordnungsspiel-Runden mit Fortschritt, Feedback und Bestzeiten | T-044 | vorhanden |
 | `resources/views/livewire/study/summary.blade.php` | Ergebnis, Dauer, Fehlantworten und Wiederholungsaktion | T-045 | vorhanden |
+| `resources/views/components/study-shortcut-help.blade.php` | Tastaturhilfe-Dialog mit ?-Shortcut und nativer Fokussteuerung | T-046 | vorhanden |
 | `resources/css/app.css` | Design-Tokens, Hell-/Dunkelmodus und Basis-Komponenten | T-002 | vorhanden |
 | `resources/css/app.css` | Tabellen- und Import-Seitenstile | T-023 | vorhanden |
 | `resources/css/app.css` | Deckübersicht und Fortschrittsanzeige | T-030 | vorhanden |
@@ -107,6 +108,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `resources/css/app.css` | Multiple-Choice-Optionen und Feedbackfarben | T-043 | vorhanden |
 | `resources/css/app.css` | Zuordnungsspiel-Layout, Treffer- und Fehleranimationen | T-044 | vorhanden |
 | `resources/css/app.css` | Kennzahlen und Liste der Fehlantworten | T-045 | vorhanden |
+| `resources/css/app.css` | Shortcut-Dialog und sichtbarer Tastaturfokus | T-046 | vorhanden |
 
 ## Datenbank
 
@@ -153,4 +155,4 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `tests/Unit/Study/LeitnerSchedulerTest.php` | Fachwechsel und Intervalle | T-040 | vorhanden |
 | `tests/Unit/Study/CardSelectorTest.php` | Filter, Auswahlreihenfolge und Limit | T-040 | vorhanden |
 | `tests/Feature/StudySessionServiceTest.php` | Sessionstart, Karten-Snapshot, Antworten und Abschluss | T-040 | vorhanden |
-| `tests/Feature/Livewire/Study/*Test.php` | Lernmodi und Zusammenfassung | T-042–T-045 vorhanden, T-046 geplant |
+| `tests/Feature/Livewire/Study/*Test.php` | Lernmodi, Zusammenfassung und Tastaturhilfe | T-042–T-046 vorhanden |

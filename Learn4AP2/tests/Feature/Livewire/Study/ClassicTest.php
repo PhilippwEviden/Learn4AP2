@@ -32,7 +32,10 @@ it('shows the first question, progress and flip control', function () {
         ->assertSee($card->question)
         ->assertSee('Karte 1 von 2')
         ->assertSee('Umdrehen')
-        ->assertSeeHtml('wire:keydown.window.space.prevent');
+        ->assertSeeHtml('x-on:keydown.window')
+        ->assertSeeHtml('aria-live="polite"')
+        ->assertSee('Tastaturhilfe')
+        ->assertSee('Tastaturkürzel');
 });
 
 it('requires revealing the card before recording an answer', function () {
