@@ -65,6 +65,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `app/Services/Study/LeitnerScheduler.php` | Fachwechsel, Antwortzähler und Leitner-Intervalle | T-040 | vorhanden |
 | `app/Services/Study/StudySessionService.php` | Startet Sessions, speichert Antworten, beendet Sessions und startet Wiederholungen | T-040/T-045 | vorhanden |
 | `app/Services/Study/DashboardStatistics.php` | Fällige Karten, Leitner-Verteilung, Countdown und letzte Sessions | T-050 | vorhanden |
+| `app/Services/Study/ProblemCardFinder.php` | Problemkarten nach Fehlerquote und Prüfungsbereich | T-051 | vorhanden |
 | `app/Services/Study/MultipleChoiceBuilder.php` | Mischt Antwortoptionen und ergänzt fehlende Distraktoren | T-043 | vorhanden |
 | `config/app.php` → `exam_date` | AP2-Datum aus `AP2_EXAM_DATE` | T-050 | vorhanden |
 
@@ -73,6 +74,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | Route | Komponente (`app/Livewire/…`) | View (`resources/views/livewire/…`) | Ticket | Status |
 |---|---|---|---|---|
 | `/` | `Dashboard` | `dashboard.blade.php` | T-050 | vorhanden |
+| `/problems` | `ProblemCards` | `problem-cards.blade.php` | T-051 | vorhanden |
 | `/import` | `ImportPage` | `import-page.blade.php` | T-023 | vorhanden |
 | `/decks` | `DeckIndex` | `deck-index.blade.php` | T-030 | vorhanden |
 | `/cards` | `CardIndex` | `card-index.blade.php` | T-031 | vorhanden |
@@ -100,6 +102,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `resources/views/livewire/study/matching.blade.php` | Zuordnungsspiel-Runden mit Fortschritt, Feedback und Bestzeiten | T-044 | vorhanden |
 | `resources/views/livewire/study/summary.blade.php` | Ergebnis, Dauer, Fehlantworten und Wiederholungsaktion | T-045 | vorhanden |
 | `resources/views/livewire/dashboard.blade.php` | AP2-Countdown, Tagesfälligkeit, Bereichsfortschritt und letzte Sessions | T-050 | vorhanden |
+| `resources/views/livewire/problem-cards.blade.php` | Nach Fehlerquote sortierte Karten mit Bereichsfilter und Übungsstart | T-051 | vorhanden |
 | `resources/views/components/study-shortcut-help.blade.php` | Tastaturhilfe-Dialog mit ?-Shortcut und nativer Fokussteuerung | T-046 | vorhanden |
 | `resources/css/app.css` | Design-Tokens, Hell-/Dunkelmodus und Basis-Komponenten | T-002 | vorhanden |
 | `resources/css/app.css` | Tabellen- und Import-Seitenstile | T-023 | vorhanden |
@@ -113,6 +116,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `resources/css/app.css` | Kennzahlen und Liste der Fehlantworten | T-045 | vorhanden |
 | `resources/css/app.css` | Shortcut-Dialog und sichtbarer Tastaturfokus | T-046 | vorhanden |
 | `resources/css/app.css` | Dashboard-Kennzahlen, Fortschritt und Sessionliste | T-050 | vorhanden |
+| `resources/css/app.css` | Problemkartenliste, Fehlerquote und Bereichsfilter | T-051 | vorhanden |
 
 ## Datenbank
 
@@ -156,6 +160,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `tests/Feature/Livewire/Study/MatchingTest.php` | Paare, Fehlversuche, Leitner-Wertung, Runden und Bestzeit | T-044 | vorhanden |
 | `tests/Feature/Livewire/Study/SummaryTest.php` | Kennzahlen, Antworten, Wiederholungsfilter und Zugangsschutz | T-045 | vorhanden |
 | `tests/Feature/Livewire/DashboardTest.php` | Countdown, fällige Karten, Leitner-Verteilung und letzte Sessions | T-050 | vorhanden |
+| `tests/Feature/Livewire/ProblemCardsTest.php` | Fehlerquote, Mindestversuche, Bereichsfilter und Übungsstart | T-051 | vorhanden |
 | `tests/Feature/DatabaseSeederTest.php` | Beispieldeck importieren und wiederholt seeden | T-024 | vorhanden |
 | `tests/Unit/Study/LeitnerSchedulerTest.php` | Fachwechsel und Intervalle | T-040 | vorhanden |
 | `tests/Unit/Study/CardSelectorTest.php` | Filter, Auswahlreihenfolge und Limit | T-040 | vorhanden |

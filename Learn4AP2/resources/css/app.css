@@ -832,6 +832,58 @@ p {
     padding: var(--space-3) var(--space-4);
 }
 
+.problem-cards-page {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.problem-area-filter {
+    max-width: 32rem;
+}
+
+.problem-card-list {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.problem-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    padding: var(--space-4);
+}
+
+.problem-card h2 {
+    margin-block: var(--space-2);
+    font-size: 1.15rem;
+}
+
+.problem-card p {
+    margin-bottom: 0;
+}
+
+.problem-error-rate {
+    display: grid;
+    min-width: 6rem;
+    text-align: right;
+}
+
+.problem-error-rate strong {
+    color: var(--color-error);
+    font-size: 1.5rem;
+}
+
+.problem-error-rate span {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+.problem-empty-state {
+    padding: var(--space-4);
+}
+
 .matching-item:disabled {
     opacity: 1;
     cursor: default;
