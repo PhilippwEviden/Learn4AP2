@@ -7,6 +7,7 @@ use App\Data\ImportError;
 use App\Data\ParseResult;
 use App\Enums\Difficulty;
 use App\Enums\ExamArea;
+use App\Rules\CardRules;
 use InvalidArgumentException;
 use RuntimeException;
 
@@ -119,47 +120,20 @@ class CsvCardParser
             }
 
             $errorCount = count($errors);
-            $area = null;
-            $difficulty = null;
+            array_push($errors, ...CardRules::validateImportRow($values, $line));
 
-            foreach (['id', 'bereich', 'thema', 'frage', 'antwort', 'kurzantwort'] as $requiredField) {
-                if ($values[$requiredField] === '') {
-                    $errors[] = new ImportError($line, $requiredField, 'Dieses Pflichtfeld darf nicht leer sein.');
-                }
-            }
-
-            if ($values['id'] !== '') {
-                if (preg_match('/^[a-z0-9-]+$/', $values['id']) !== 1) {
-                    $errors[] = new ImportError($line, 'id', 'Die ID darf nur Kleinbuchstaben, Ziffern und Bindestriche enthalten.');
-                } elseif (isset($seenIds[$values['id']])) {
+            if (preg_match('/^[a-z0-9-]+$/', $values['id']) === 1 && mb_strlen($values['id']) <= 255) {
+                if (isset($seenIds[$values['id']])) {
                     $errors[] = new ImportError($line, 'id', 'Diese ID kommt in der Datei mehrfach vor.');
                 } else {
                     $seenIds[$values['id']] = true;
                 }
             }
 
-            if ($values['bereich'] !== '') {
-                $area = ExamArea::tryFrom(strtoupper($values['bereich']));
-
-                if ($area === null) {
-                    $errors[] = new ImportError($line, 'bereich', 'Der Bereich muss GA1, GA2 oder WISO sein.');
-                }
-            }
-
-            $difficulty = match ($values['schwierigkeit']) {
-                '1' => Difficulty::Basic,
-                '2' => Difficulty::ExamLevel,
-                '3' => Difficulty::Transfer,
-                default => null,
-            };
-
-            if ($difficulty === null) {
-                $errors[] = new ImportError($line, 'schwierigkeit', 'Die Schwierigkeit muss 1, 2 oder 3 sein.');
-            }
-
-            if ($values['kurzantwort'] !== '' && mb_strlen($values['kurzantwort']) > 60) {
-                $errors[] = new ImportError($line, 'kurzantwort', 'Die Kurzantwort darf höchstens 60 Zeichen lang sein.');
-            }
+            $area = $values['bereich'] === '' ? null : ExamArea::tryFrom(strtoupper($values['bereich']));
+            $difficulty = in_array($values['schwierigkeit'], ['1', '2', '3'], true)
+                ? Difficulty::from((int) $values['schwierigkeit'])
+                : null;
 
             if (count($errors) !== $errorCount || $area === null || $difficulty === null) {
                 continue;

@@ -1,6 +1,10 @@
 <section>
     <h1>Karten</h1>
     <p>Durchsuche und filtere deine Karteikarten.</p>
+    <p><a class="btn btn--primary" href="{{ route('cards.create') }}">Karte anlegen</a></p>
+    @if (session('status'))
+        <p class="alert--success" role="status">{{ session('status') }}</p>
+    @endif
 
     <section class="card filter-panel" aria-label="Kartenfilter">
         <div class="filter-grid">
@@ -68,6 +72,7 @@
                     <th scope="col">Thema</th>
                     <th scope="col">Fach</th>
                     <th scope="col">✓ / ✗</th>
+                    <th scope="col">Aktionen</th>
                 </tr>
             </thead>
             <tbody>
@@ -79,10 +84,11 @@
                         <td>{{ $card->topic }}</td>
                         <td>{{ $card->progress?->box ?? '–' }}</td>
                         <td>{{ $card->progress?->correct_count ?? 0 }} / {{ $card->progress?->wrong_count ?? 0 }}</td>
+                        <td><a class="card-actions-link" href="{{ route('cards.edit', $card) }}">Bearbeiten</a></td>
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="6">Keine Karten für diese Filter gefunden.</td>
+                        <td colspan="7">Keine Karten für diese Filter gefunden.</td>
                     </tr>
                 @endforelse
             </tbody>

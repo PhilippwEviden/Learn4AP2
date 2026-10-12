@@ -382,6 +382,30 @@ p {
     margin-block: var(--space-6);
 }
 
+.card-editor {
+    display: grid;
+    gap: 0 var(--space-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
+.card-editor .form-field:nth-child(5),
+.card-editor .form-field:nth-child(6),
+.card-form-actions {
+    grid-column: 1 / -1;
+}
+
+.card-editor-actions {
+    display: grid;
+    justify-items: start;
+    gap: var(--space-3);
+    margin-block: var(--space-6);
+}
+
+.card-editor-actions h2,
+.card-editor-actions p {
+    margin: 0;
+}
+
 @media (max-width: 600px) {
     .site-header {
         align-items: flex-start;

@@ -5,8 +5,8 @@
 
 ## Aktuell
 
-- **Aktuelles Ticket:** T-032 – Karte bearbeiten / anlegen / löschen (P2)
-- **Nächstes Ticket:** T-032
+- **Aktuelles Ticket:** T-040 – CardSelector & LeitnerScheduler
+- **Nächstes Ticket:** T-040
 - **Blockiert:** –
 - **Letzte Sitzung:** –
 
@@ -42,7 +42,7 @@
 ### E3 – Kartenverwaltung
 - [x] T-030 Deck-Übersicht
 - [x] T-031 Kartenliste mit Filter
-- [ ] T-032 Karte bearbeiten (P2)
+- [x] T-032 Karte bearbeiten (P2)
 
 ### E4 – Lernmodi
 - [ ] T-040 CardSelector & LeitnerScheduler
@@ -98,6 +98,7 @@ _Agent trägt hier Fragen an Philipp ein. Format: `- [T-XXX] Frage – getroffen
 
 _Neueste oben. Eine Zeile pro Sitzung._
 
+- 2026-10-12 – T-032 abgeschlossen; gemeinsame Importregeln, Kartenformular und Fortschrittsaktionen getestet. Weiter mit T-040.
 - 2026-10-12 – T-031 abgeschlossen; URL-Filter, Kartenfelder und 25er-Pagination getestet. Weiter mit T-032.
 - 2026-10-12 – T-030 abgeschlossen; Deckwerte, Fortschritt, Umbenennen und Löschen getestet. Weiter mit T-031.
 - 2026-10-12 – T-024 abgeschlossen; Beispieldeck und Wiederholbarkeit getestet. Weiter mit T-030.
