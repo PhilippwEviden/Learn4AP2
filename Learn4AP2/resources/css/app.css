@@ -545,6 +545,70 @@ p {
     font-size: 0.9rem;
 }
 
+.choice-card {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.choice-card h2 {
+    margin: 0;
+}
+
+.choice-options {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.choice-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    width: 100%;
+    min-height: 3.5rem;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.choice-option:hover:not(:disabled) {
+    border-color: var(--color-primary);
+    background: var(--color-accent);
+}
+
+.choice-option:disabled {
+    cursor: default;
+}
+
+.choice-option.is-correct {
+    border-color: var(--color-success);
+    background: var(--color-success-surface);
+}
+
+.choice-option.is-incorrect {
+    border-color: var(--color-error);
+    background: var(--color-error-surface);
+}
+
+.choice-number {
+    display: inline-grid;
+    flex: 0 0 2rem;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.choice-feedback p {
+    margin-block: var(--space-2) 0;
+}
+
 @media (max-width: 600px) {
     .site-header {
         align-items: flex-start;

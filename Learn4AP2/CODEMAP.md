@@ -57,10 +57,11 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `app/Rules/CardRules.php` | Gemeinsame Kartenvalidierung für CSV-Import und Formular | T-032 | vorhanden |
 | `app/Livewire/CardForm.php` | Karte anlegen, bearbeiten, löschen und Lernfortschritt zurücksetzen | T-032 | vorhanden |
 | `app/Data/StudyFilter.php` | Typisierte Filter für Decks, Bereiche, Themen, Tags, Schwierigkeit und Kartenpool | T-040 | vorhanden |
+| `app/Data/Question.php` | Multiple-Choice-Aufgabe mit Optionen, richtiger Antwort und Erklärung | T-043 | vorhanden |
 | `app/Services/Study/CardSelector.php` | Filtert, priorisiert und mischt Karten | T-040 | vorhanden |
 | `app/Services/Study/LeitnerScheduler.php` | Fachwechsel, Antwortzähler und Leitner-Intervalle | T-040 | vorhanden |
 | `app/Services/Study/StudySessionService.php` | Startet Sessions, speichert Antworten und beendet Sessions | T-040 | vorhanden |
-| `app/Services/Study/MultipleChoiceBuilder.php` | 4 Optionen + Fallback | T-043 | geplant |
+| `app/Services/Study/MultipleChoiceBuilder.php` | Mischt Antwortoptionen und ergänzt fehlende Distraktoren | T-043 | vorhanden |
 | `config/app.php` → `exam_date` | AP2-Datum aus `.env` | T-050 | geplant |
 
 ## Livewire-Komponenten & Routen
@@ -75,7 +76,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `/cards/create`, `/cards/{card}/edit` | `CardForm` | `card-form.blade.php` | T-032 | vorhanden |
 | `/study` | `StudyStart` | `study-start.blade.php` | T-041 | vorhanden |
 | `/study/{session}/classic` | `Study/Classic` | `study/classic.blade.php` | T-042 | vorhanden |
-| `/study/{session}/multiple-choice` | `Study/MultipleChoice` | `study/multiple-choice.blade.php` | T-043 | geplant |
+| `/study/{session}/multiple-choice` | `Study/MultipleChoice` | `study/multiple-choice.blade.php` | T-043 | vorhanden |
 | `/study/{session}/matching` | `Study/Matching` | `study/matching.blade.php` | T-044 | geplant |
 | `/study/{session}/summary` | `Study/Summary` | `study/summary.blade.php` | T-045 | geplant |
 
@@ -92,6 +93,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `resources/views/livewire/card-form.blade.php` | Kartenformular und Aktionen für Lernfortschritt | T-032 | vorhanden |
 | `resources/views/livewire/study-start.blade.php` | Lernmoduswahl, Filter und Sessionstart | T-041 | vorhanden |
 | `resources/views/livewire/study/classic.blade.php` | Klassische Karteikarte mit Flip, Bewertung und Tastatursteuerung | T-042 | vorhanden |
+| `resources/views/livewire/study/multiple-choice.blade.php` | Vier Antwortoptionen mit Sofortfeedback und Erklärung | T-043 | vorhanden |
 | `resources/css/app.css` | Design-Tokens, Hell-/Dunkelmodus und Basis-Komponenten | T-002 | vorhanden |
 | `resources/css/app.css` | Tabellen- und Import-Seitenstile | T-023 | vorhanden |
 | `resources/css/app.css` | Deckübersicht und Fortschrittsanzeige | T-030 | vorhanden |
@@ -99,6 +101,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `resources/css/app.css` | Formularlayout für Kartenbearbeitung | T-032 | vorhanden |
 | `resources/css/app.css` | Lernstart-Kacheln und Filterlayout | T-041 | vorhanden |
 | `resources/css/app.css` | Flip-Karte, Fortschrittsanzeige und reduzierte Animation | T-042 | vorhanden |
+| `resources/css/app.css` | Multiple-Choice-Optionen und Feedbackfarben | T-043 | vorhanden |
 | `resources/css/study.css` | Flip-Animation, Matching-Animationen | T-042/T-044 | geplant |
 
 ## Datenbank
@@ -137,6 +140,8 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `tests/Feature/Livewire/CardFormTest.php` | Anlegen, Bearbeiten, Validieren, Zurücksetzen und Löschen | T-032 | vorhanden |
 | `tests/Feature/Livewire/StudyStartTest.php` | Moduswahl, Filter, Vorschauzahl und Sessionstart | T-041 | vorhanden |
 | `tests/Feature/Livewire/Study/ClassicTest.php` | Karteikarten-Flip, Bewertung, Weiterleitung und Abbruch | T-042 | vorhanden |
+| `tests/Unit/Study/MultipleChoiceBuilderTest.php` | Mischung, Distraktor-Fallback und Deduplizierung | T-043 | vorhanden |
+| `tests/Feature/Livewire/Study/MultipleChoiceTest.php` | Antwortauswahl, Feedback, Erklärung und Sitzungsabschluss | T-043 | vorhanden |
 | `tests/Feature/DatabaseSeederTest.php` | Beispieldeck importieren und wiederholt seeden | T-024 | vorhanden |
 | `tests/Unit/Study/LeitnerSchedulerTest.php` | Fachwechsel und Intervalle | T-040 | vorhanden |
 | `tests/Unit/Study/CardSelectorTest.php` | Filter, Auswahlreihenfolge und Limit | T-040 | vorhanden |
