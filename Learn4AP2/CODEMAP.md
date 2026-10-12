@@ -100,6 +100,8 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `database/factories/StudySessionFactory.php` | Testfabrik für Lernsitzungen | T-012 | vorhanden |
 | `database/factories/SessionAnswerFactory.php` | Testfabrik für Antworten | T-012 | vorhanden |
 | `database/factories/ImportFactory.php` | Testfabrik für Import-Protokolle | T-012 | vorhanden |
+| `docs/beispiel.csv` | Beispielkarten im verbindlichen 12-Spalten-Format | T-020 | vorhanden |
+| `tests/Fixtures/csv/*.csv` | CSV-Parser-Fixtures | T-020 | vorhanden |
 | `database/seeders/DatabaseSeeder.php` | importiert `docs/beispiel.csv` | T-024 | geplant |
 
 ## Tests
@@ -109,7 +111,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `tests/Feature/CardModelTest.php` | Beziehungen, Observer, Casts, Scopes und Cascade-Delete | T-011 | vorhanden |
 | `tests/Feature/StudySessionAndImportModelTest.php` | Session-/Import-Beziehungen, Casts und Cascade-Delete | T-012 | vorhanden |
 | `tests/Feature/LayoutTest.php` | Layout, Text-Komponente und responsive Design-Tokens | T-002 | vorhanden |
-| `tests/Fixtures/csv/*.csv` | gültige/fehlerhafte CSVs | T-020 | geplant |
+| `tests/Fixtures/csv/*.csv` | Gültige, BOM-, Header-, Validierungs- und Quoting-Fixtures | T-020 | vorhanden |
 | `tests/Unit/Enums/EnumTest.php` | Enum-Labels und Backed-Value-Auflösung | T-010 | vorhanden |
 | `tests/Unit/Import/CsvCardParserTest.php` | Parser | T-021 | geplant |
 | `tests/Feature/Import/ImportCardsTest.php` | Upsert, Fortschritt bleibt | T-022 | geplant |

@@ -1,0 +1,2 @@
+id;bereich;thema;frage;antwort;kurzantwort;falsch_1;falsch_2;falsch_3;tags;schwierigkeit;quelle
+quoted-ga2-001;GA2;SQL;"Welche Ausgabe entsteht, wenn die Abfrage ""SELECT 'a;b'"" ausführt?";"Die Zeichenfolge ""a;b"" wird als ein Wert ausgegeben.";"Ein Wert: a;b";"Zwei Werte: a und b";Ein NULL-Wert;Ein Syntaxfehler;"sql,quoting";2;Testfixture

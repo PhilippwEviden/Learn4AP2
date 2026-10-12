@@ -1,0 +1,6 @@
+id;bereich;thema;frage;antwort;kurzantwort;falsch_1;falsch_2;falsch_3;tags;schwierigkeit;quelle
+invalid-area-001;GA3;SQL;Welche Abfrage gruppiert Zeilen?;GROUP BY bildet Gruppen.;GROUP BY;ORDER BY;WHERE;LIMIT;"sql,group-by";1;Testfixture
+invalid-short-001;GA2;SQL;Was filtert Gruppen?;HAVING filtert gruppierte Ergebnisse.;Diese Kurzantwort überschreitet absichtlich die erlaubten sechzig Zeichen deutlich;GROUP BY;WHERE;ORDER BY;"sql,group-by";2;Testfixture
+invalid-empty-001;GA1;UML;;Ein Klassendiagramm zeigt Klassen und Beziehungen.;Klassendiagramm;Sequenzdiagramm;Aktivitätsdiagramm;Zustandsdiagramm;"uml,diagramm";1;Testfixture
+duplicate-id-001;GA2;SQL;Was filtert Gruppen?;HAVING filtert gruppierte Ergebnisse.;HAVING;GROUP BY;WHERE;ORDER BY;"sql,group-by";2;Testfixture
+duplicate-id-001;GA2;SQL;Welche Klausel gruppiert Zeilen?;GROUP BY bildet Gruppen.;GROUP BY;HAVING;WHERE;ORDER BY;"sql,group-by";1;Testfixture

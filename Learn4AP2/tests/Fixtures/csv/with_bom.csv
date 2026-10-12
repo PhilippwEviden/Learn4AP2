@@ -1,0 +1,2 @@
+﻿id;bereich;thema;frage;antwort;kurzantwort;falsch_1;falsch_2;falsch_3;tags;schwierigkeit;quelle
+bom-ga2-001;GA2;HTTP;Was bedeutet Statuscode 404?;Die angeforderte Ressource wurde nicht gefunden.;Ressource nicht gefunden;Authentifizierung erforderlich;Zugriff verweigert;Interner Serverfehler;"http,statuscode";1;Testfixture

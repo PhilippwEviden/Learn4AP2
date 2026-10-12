@@ -5,7 +5,7 @@
 
 ## Aktuell
 
-- **Aktuelles Ticket:** T-020 – Beispiel-CSV & Testfixtures
+- **Aktuelles Ticket:** T-021 – CsvCardParser
 - **Nächstes Ticket:** T-021
 - **Blockiert:** –
 - **Letzte Sitzung:** –
@@ -33,7 +33,7 @@
 - [x] T-012 StudySession, SessionAnswer, Import
 
 ### E2 – Import
-- [ ] T-020 Beispiel-CSV & Fixtures
+- [x] T-020 Beispiel-CSV & Fixtures
 - [ ] T-021 CsvCardParser
 - [ ] T-022 ImportCardsAction
 - [ ] T-023 Import-Seite
@@ -86,6 +86,7 @@
 | 2026-10-12 | CardProgress wird über CardObserver automatisch angelegt | Jede Karte startet unmittelbar in Leitner-Fach 1 |
 | 2026-10-12 | Session-, Antwort- und Import-Tabellen verwenden die definierten Erstellungszeiten | Hält das Persistenzmodell ohne unnötige `updated_at`-Spalten ein |
 | 2026-10-12 | Gemeinsame Abarbeitung der nächsten zehn Tickets explizit angefordert | Tickets werden dennoch einzeln und in Backlog-Reihenfolge umgesetzt |
+| 2026-10-12 | Beispielkarten außerhalb der Prompt-Beispiele als Übungsaufgaben gekennzeichnet | Vermeidet eine unzutreffende Zuordnung zu echten IHK-Prüfungen |
 
 ## Offene Fragen
 
@@ -97,4 +98,4 @@ _Agent trägt hier Fragen an Philipp ein. Format: `- [T-XXX] Frage – getroffen
 
 _Neueste oben. Eine Zeile pro Sitzung._
 
-- 2026-10-12 – T-012 abgeschlossen; Migrationen, Modelle, Factories und Beziehungen getestet.
+- 2026-10-12 – T-020 abgeschlossen; Beispieldatei und alle fünf geforderten Fixtures erstellt.

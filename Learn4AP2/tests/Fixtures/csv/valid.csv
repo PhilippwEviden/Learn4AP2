@@ -1,0 +1,3 @@
+id;bereich;thema;frage;antwort;kurzantwort;falsch_1;falsch_2;falsch_3;tags;schwierigkeit;quelle
+fixture-ga1-001;GA1;UML;Was zeigt ein Klassendiagramm?;Es zeigt Klassen und ihre Beziehungen.;Klassen und Beziehungen;Nachrichten im Zeitverlauf;Prozessschritte;Netzwerkpakete;"uml,diagramm";1;Testfixture
+fixture-wiso-001;WISO;Steuern;Wie hoch ist der reguläre Umsatzsteuersatz?;Der reguläre Satz beträgt 19 Prozent.;19 Prozent;7 Prozent;16 Prozent;25 Prozent;"steuern,umsatzsteuer";1;Testfixture
