@@ -20,7 +20,8 @@ npm ci
 ```powershell
 composer run dev
 composer test
-vendor/bin/pint
+composer lint
+composer fix
 ```
 
 Projektumfang und Tickets stehen in [backlog.md](./backlog.md); den aktuellen Arbeitsstand dokumentiert [STATUS.md](./STATUS.md).

@@ -5,8 +5,8 @@
 
 ## Aktuell
 
-- **Aktuelles Ticket:** T-003 – Qualitäts-Scripts
-- **Nächstes Ticket:** T-010
+- **Aktuelles Ticket:** T-010 – Enums ExamArea, StudyMode, Difficulty
+- **Nächstes Ticket:** T-011
 - **Blockiert:** –
 - **Letzte Sitzung:** –
 
@@ -25,7 +25,7 @@
 ### E0 – Setup
 - [x] T-001 Laravel-Projekt aufsetzen
 - [x] T-002 Layout & CSS-Grundgerüst
-- [ ] T-003 Qualitäts-Scripts
+- [x] T-003 Qualitäts-Scripts
 
 ### E1 – Datenmodell
 - [ ] T-010 Enums
@@ -93,4 +93,4 @@ _Agent trägt hier Fragen an Philipp ein. Format: `- [T-XXX] Frage – getroffen
 
 _Neueste oben. Eine Zeile pro Sitzung._
 
-- 2026-10-12 – T-002 abgeschlossen; Tests, Pint, Vite-Build und 375-px-Darstellung im Hell-/Dunkelmodus erfolgreich.
+- 2026-10-12 – T-003 abgeschlossen; composer test/lint/fix und Lockfile-Validierung erfolgreich.
