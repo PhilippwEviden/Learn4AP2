@@ -52,7 +52,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `app/Data/ImportError.php` | DTO Fehler (line, field, message) | T-021 | vorhanden |
 | `app/Data/ParseResult.php` | rows + errors | T-021 | vorhanden |
 | `app/Services/Import/CsvCardParser.php` | CSV → ParseResult | T-021 | vorhanden |
-| `app/Actions/ImportCards.php` | Upsert in DB | T-022 | geplant |
+| `app/Actions/ImportCards.php` | Transaktionaler Karten-Upsert und Import-Protokoll | T-022 | vorhanden |
 | `app/Data/StudyFilter.php` | Filter für Kartenauswahl | T-040 | geplant |
 | `app/Services/Study/CardSelector.php` | Kartenauswahl | T-040 | geplant |
 | `app/Services/Study/LeitnerScheduler.php` | Fach/Intervall-Logik | T-040 | geplant |
@@ -114,7 +114,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `tests/Fixtures/csv/*.csv` | Gültige, BOM-, Header-, Validierungs- und Quoting-Fixtures | T-020 | vorhanden |
 | `tests/Unit/Enums/EnumTest.php` | Enum-Labels und Backed-Value-Auflösung | T-010 | vorhanden |
 | `tests/Unit/Import/CsvCardParserTest.php` | Parser | T-021 | vorhanden |
-| `tests/Feature/Import/ImportCardsTest.php` | Upsert, Fortschritt bleibt | T-022 | geplant |
+| `tests/Feature/Import/ImportCardsTest.php` | Upsert, Fortschritt bleibt | T-022 | vorhanden |
 | `tests/Feature/Livewire/ImportPageTest.php` | Upload → Vorschau → Import | T-023 | geplant |
 | `tests/Unit/Study/LeitnerSchedulerTest.php` | Intervalle | T-040 | geplant |
 | `tests/Unit/Study/CardSelectorTest.php` | Auswahl/Reihenfolge | T-040 | geplant |
