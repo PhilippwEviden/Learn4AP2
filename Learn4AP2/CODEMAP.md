@@ -38,9 +38,9 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 
 | Pfad | Inhalt | Ticket | Status |
 |---|---|---|---|
-| `app/Enums/ExamArea.php` | GA1, GA2, WISO + Labels | T-010 | geplant |
-| `app/Enums/StudyMode.php` | classic, multiple_choice, matching, exam | T-010 | geplant |
-| `app/Enums/Difficulty.php` | 1–3 + Labels | T-010 | geplant |
+| `app/Enums/ExamArea.php` | GA1, GA2, WISO + deutsche Labels | T-010 | vorhanden |
+| `app/Enums/StudyMode.php` | classic, multiple_choice, matching, exam + deutsche Labels | T-010 | vorhanden |
+| `app/Enums/Difficulty.php` | Stufen 1–3 + deutsche Labels | T-010 | vorhanden |
 | `app/Models/Deck.php` | Deck, hasMany Card | T-011 | geplant |
 | `app/Models/Card.php` | Karte, Scopes `area/topic/tag/search/due` | T-011 | geplant |
 | `app/Models/CardProgress.php` | Leitner-Fach, due_at, Zähler | T-011 | geplant |
@@ -103,7 +103,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 |---|---|---|---|
 | `tests/Feature/LayoutTest.php` | Layout, Text-Komponente und responsive Design-Tokens | T-002 | vorhanden |
 | `tests/Fixtures/csv/*.csv` | gültige/fehlerhafte CSVs | T-020 | geplant |
-| `tests/Unit/Enums/*` | Enum-Labels | T-010 | geplant |
+| `tests/Unit/Enums/EnumTest.php` | Enum-Labels und Backed-Value-Auflösung | T-010 | vorhanden |
 | `tests/Unit/Import/CsvCardParserTest.php` | Parser | T-021 | geplant |
 | `tests/Feature/Import/ImportCardsTest.php` | Upsert, Fortschritt bleibt | T-022 | geplant |
 | `tests/Feature/Livewire/ImportPageTest.php` | Upload → Vorschau → Import | T-023 | geplant |
