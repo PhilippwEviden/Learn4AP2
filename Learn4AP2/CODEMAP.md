@@ -48,10 +48,10 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `app/Models/StudySession.php` | Lernsitzung mit Mode-/Filter-Casts und Antworten | T-012 | vorhanden |
 | `app/Models/SessionAnswer.php` | Einzelantwort mit Beziehungen zu Session und Karte | T-012 | vorhanden |
 | `app/Models/Import.php` | Import-Protokoll mit Fehler-Cast und Deck-Beziehung | T-012 | vorhanden |
-| `app/Data/CardRowData.php` | DTO einer CSV-Zeile | T-021 | geplant |
-| `app/Data/ImportError.php` | DTO Fehler (line, field, message) | T-021 | geplant |
-| `app/Data/ParseResult.php` | rows + errors | T-021 | geplant |
-| `app/Services/Import/CsvCardParser.php` | CSV → ParseResult | T-021 | geplant |
+| `app/Data/CardRowData.php` | DTO einer CSV-Zeile | T-021 | vorhanden |
+| `app/Data/ImportError.php` | DTO Fehler (line, field, message) | T-021 | vorhanden |
+| `app/Data/ParseResult.php` | rows + errors | T-021 | vorhanden |
+| `app/Services/Import/CsvCardParser.php` | CSV → ParseResult | T-021 | vorhanden |
 | `app/Actions/ImportCards.php` | Upsert in DB | T-022 | geplant |
 | `app/Data/StudyFilter.php` | Filter für Kartenauswahl | T-040 | geplant |
 | `app/Services/Study/CardSelector.php` | Kartenauswahl | T-040 | geplant |
@@ -113,7 +113,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `tests/Feature/LayoutTest.php` | Layout, Text-Komponente und responsive Design-Tokens | T-002 | vorhanden |
 | `tests/Fixtures/csv/*.csv` | Gültige, BOM-, Header-, Validierungs- und Quoting-Fixtures | T-020 | vorhanden |
 | `tests/Unit/Enums/EnumTest.php` | Enum-Labels und Backed-Value-Auflösung | T-010 | vorhanden |
-| `tests/Unit/Import/CsvCardParserTest.php` | Parser | T-021 | geplant |
+| `tests/Unit/Import/CsvCardParserTest.php` | Parser | T-021 | vorhanden |
 | `tests/Feature/Import/ImportCardsTest.php` | Upsert, Fortschritt bleibt | T-022 | geplant |
 | `tests/Feature/Livewire/ImportPageTest.php` | Upload → Vorschau → Import | T-023 | geplant |
 | `tests/Unit/Study/LeitnerSchedulerTest.php` | Intervalle | T-040 | geplant |

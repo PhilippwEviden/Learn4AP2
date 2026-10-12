@@ -5,8 +5,8 @@
 
 ## Aktuell
 
-- **Aktuelles Ticket:** T-021 – CsvCardParser
-- **Nächstes Ticket:** T-021
+- **Aktuelles Ticket:** T-022 – ImportCardsAction (Upsert)
+- **Nächstes Ticket:** T-022
 - **Blockiert:** –
 - **Letzte Sitzung:** –
 
@@ -34,7 +34,7 @@
 
 ### E2 – Import
 - [x] T-020 Beispiel-CSV & Fixtures
-- [ ] T-021 CsvCardParser
+- [x] T-021 CsvCardParser
 - [ ] T-022 ImportCardsAction
 - [ ] T-023 Import-Seite
 - [ ] T-024 Seeder
@@ -98,4 +98,5 @@ _Agent trägt hier Fragen an Philipp ein. Format: `- [T-XXX] Frage – getroffen
 
 _Neueste oben. Eine Zeile pro Sitzung._
 
+- 2026-10-12 – T-021 abgeschlossen; Parser-Tests und Pint bestanden. Weiter mit T-022.
 - 2026-10-12 – T-020 abgeschlossen; Beispieldatei und alle fünf geforderten Fixtures erstellt.
