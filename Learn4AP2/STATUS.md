@@ -5,8 +5,8 @@
 
 ## Aktuell
 
-- **Aktuelles Ticket:** T-012 – StudySession, SessionAnswer, Import
-- **Nächstes Ticket:** T-020
+- **Aktuelles Ticket:** T-020 – Beispiel-CSV & Testfixtures
+- **Nächstes Ticket:** T-021
 - **Blockiert:** –
 - **Letzte Sitzung:** –
 
@@ -30,7 +30,7 @@
 ### E1 – Datenmodell
 - [x] T-010 Enums
 - [x] T-011 Deck, Card, CardProgress
-- [ ] T-012 StudySession, SessionAnswer, Import
+- [x] T-012 StudySession, SessionAnswer, Import
 
 ### E2 – Import
 - [ ] T-020 Beispiel-CSV & Fixtures
@@ -84,6 +84,8 @@
 | 2026-10-12 | App-Layout mit responsivem CSS und System-Farbmodus | Ohne UI-Framework, nutzbar ab 375 px |
 | 2026-10-12 | Enums als typisierte Backed Enums mit deutschen Labels | Exam-Bereiche und Lernmodi als String-, Schwierigkeit als Integer-Enum |
 | 2026-10-12 | CardProgress wird über CardObserver automatisch angelegt | Jede Karte startet unmittelbar in Leitner-Fach 1 |
+| 2026-10-12 | Session-, Antwort- und Import-Tabellen verwenden die definierten Erstellungszeiten | Hält das Persistenzmodell ohne unnötige `updated_at`-Spalten ein |
+| 2026-10-12 | Gemeinsame Abarbeitung der nächsten zehn Tickets explizit angefordert | Tickets werden dennoch einzeln und in Backlog-Reihenfolge umgesetzt |
 
 ## Offene Fragen
 
@@ -95,4 +97,4 @@ _Agent trägt hier Fragen an Philipp ein. Format: `- [T-XXX] Frage – getroffen
 
 _Neueste oben. Eine Zeile pro Sitzung._
 
-- 2026-10-12 – T-011 abgeschlossen; Migrationen, Modelle, Scopes und Fortschritts-Observer getestet.
+- 2026-10-12 – T-012 abgeschlossen; Migrationen, Modelle, Factories und Beziehungen getestet.
