@@ -5,8 +5,8 @@
 
 ## Aktuell
 
-- **Aktuelles Ticket:** T-040 – CardSelector & LeitnerScheduler
-- **Nächstes Ticket:** T-040
+- **Aktuelles Ticket:** T-041 – Lernstart-Seite
+- **Nächstes Ticket:** T-041
 - **Blockiert:** –
 - **Letzte Sitzung:** –
 
@@ -45,7 +45,7 @@
 - [x] T-032 Karte bearbeiten (P2)
 
 ### E4 – Lernmodi
-- [ ] T-040 CardSelector & LeitnerScheduler
+- [x] T-040 CardSelector & LeitnerScheduler
 - [ ] T-041 Lernstart-Seite
 - [ ] T-042 Modus Klassisch
 - [ ] T-043 Modus Multiple Choice
@@ -85,6 +85,7 @@
 | 2026-10-12 | Enums als typisierte Backed Enums mit deutschen Labels | Exam-Bereiche und Lernmodi als String-, Schwierigkeit als Integer-Enum |
 | 2026-10-12 | CardProgress wird über CardObserver automatisch angelegt | Jede Karte startet unmittelbar in Leitner-Fach 1 |
 | 2026-10-12 | Session-, Antwort- und Import-Tabellen verwenden die definierten Erstellungszeiten | Hält das Persistenzmodell ohne unnötige `updated_at`-Spalten ein |
+| 2026-10-12 | Problemkarten benötigen mindestens drei Antworten und mehr falsche als richtige Antworten | Reproduzierbare Definition für den Problemkarten-Filter in T-040 |
 | 2026-10-12 | Gemeinsame Abarbeitung der nächsten zehn Tickets explizit angefordert | Tickets werden dennoch einzeln und in Backlog-Reihenfolge umgesetzt |
 | 2026-10-12 | Beispielkarten außerhalb der Prompt-Beispiele als Übungsaufgaben gekennzeichnet | Vermeidet eine unzutreffende Zuordnung zu echten IHK-Prüfungen |
 
@@ -98,6 +99,7 @@ _Agent trägt hier Fragen an Philipp ein. Format: `- [T-XXX] Frage – getroffen
 
 _Neueste oben. Eine Zeile pro Sitzung._
 
+- 2026-10-12 – T-040 abgeschlossen; Auswahl, Leitner-Intervalle und Sessionablauf getestet. Weiter mit T-041.
 - 2026-10-12 – T-032 abgeschlossen; gemeinsame Importregeln, Kartenformular und Fortschrittsaktionen getestet. Weiter mit T-040.
 - 2026-10-12 – T-031 abgeschlossen; URL-Filter, Kartenfelder und 25er-Pagination getestet. Weiter mit T-032.
 - 2026-10-12 – T-030 abgeschlossen; Deckwerte, Fortschritt, Umbenennen und Löschen getestet. Weiter mit T-031.

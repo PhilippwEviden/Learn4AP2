@@ -40,6 +40,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 |---|---|---|---|
 | `app/Enums/ExamArea.php` | GA1, GA2, WISO + deutsche Labels | T-010 | vorhanden |
 | `app/Enums/StudyMode.php` | classic, multiple_choice, matching, exam + deutsche Labels | T-010 | vorhanden |
+| `app/Enums/StudyQueue.php` | Auswahl fälliger, aller oder problematischer Karten | T-040 | vorhanden |
 | `app/Enums/Difficulty.php` | Stufen 1–3 + deutsche Labels | T-010 | vorhanden |
 | `app/Models/Deck.php` | Deck, hasMany Card | T-011 | vorhanden |
 | `app/Models/Card.php` | Karte, Enum-/JSON-Casts, Beziehungen und Scopes `area/topic/tag/search/due` | T-011 | vorhanden |
@@ -55,10 +56,10 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `app/Actions/ImportCards.php` | Transaktionaler Karten-Upsert und Import-Protokoll | T-022 | vorhanden |
 | `app/Rules/CardRules.php` | Gemeinsame Kartenvalidierung für CSV-Import und Formular | T-032 | vorhanden |
 | `app/Livewire/CardForm.php` | Karte anlegen, bearbeiten, löschen und Lernfortschritt zurücksetzen | T-032 | vorhanden |
-| `app/Data/StudyFilter.php` | Filter für Kartenauswahl | T-040 | geplant |
-| `app/Services/Study/CardSelector.php` | Kartenauswahl | T-040 | geplant |
-| `app/Services/Study/LeitnerScheduler.php` | Fach/Intervall-Logik | T-040 | geplant |
-| `app/Services/Study/StudySessionService.php` | Session start/answer/finish | T-040 | geplant |
+| `app/Data/StudyFilter.php` | Typisierte Filter für Decks, Bereiche, Themen, Tags, Schwierigkeit und Kartenpool | T-040 | vorhanden |
+| `app/Services/Study/CardSelector.php` | Filtert, priorisiert und mischt Karten | T-040 | vorhanden |
+| `app/Services/Study/LeitnerScheduler.php` | Fachwechsel, Antwortzähler und Leitner-Intervalle | T-040 | vorhanden |
+| `app/Services/Study/StudySessionService.php` | Startet Sessions, speichert Antworten und beendet Sessions | T-040 | vorhanden |
 | `app/Services/Study/MultipleChoiceBuilder.php` | 4 Optionen + Fallback | T-043 | geplant |
 | `config/app.php` → `exam_date` | AP2-Datum aus `.env` | T-050 | geplant |
 
@@ -131,7 +132,8 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `tests/Feature/Livewire/CardIndexTest.php` | Filter, URL-Zustand, Kartenfelder und Pagination | T-031 | vorhanden |
 | `tests/Feature/Livewire/CardFormTest.php` | Anlegen, Bearbeiten, Validieren, Zurücksetzen und Löschen | T-032 | vorhanden |
 | `tests/Feature/DatabaseSeederTest.php` | Beispieldeck importieren und wiederholt seeden | T-024 | vorhanden |
-| `tests/Unit/Study/LeitnerSchedulerTest.php` | Intervalle | T-040 | geplant |
-| `tests/Unit/Study/CardSelectorTest.php` | Auswahl/Reihenfolge | T-040 | geplant |
+| `tests/Unit/Study/LeitnerSchedulerTest.php` | Fachwechsel und Intervalle | T-040 | vorhanden |
+| `tests/Unit/Study/CardSelectorTest.php` | Filter, Auswahlreihenfolge und Limit | T-040 | vorhanden |
+| `tests/Feature/StudySessionServiceTest.php` | Sessionstart, Karten-Snapshot, Antworten und Abschluss | T-040 | vorhanden |
 | `tests/Unit/Study/MultipleChoiceBuilderTest.php` | Optionen + Fallback | T-043 | geplant |
 | `tests/Feature/Livewire/Study/*Test.php` | Lernmodi | T-042–T-045 | geplant |
