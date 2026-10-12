@@ -17,6 +17,7 @@
                 <nav class="site-nav" aria-label="Hauptnavigation">
                     <a href="/">Dashboard</a>
                     <a href="/study">Lernen</a>
+                    <a href="/decks">Decks</a>
                     <a href="/cards">Karten</a>
                     <a href="/import">Import</a>
                 </nav>

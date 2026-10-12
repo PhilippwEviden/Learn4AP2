@@ -312,6 +312,49 @@ p {
     vertical-align: top;
 }
 
+.deck-list {
+    display: grid;
+    gap: var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.deck-card h2 {
+    margin-top: 0;
+}
+
+.deck-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    gap: var(--space-4);
+    margin-block: var(--space-4);
+}
+
+.deck-metrics dt {
+    color: var(--color-muted);
+    font-size: 0.875rem;
+}
+
+.deck-metrics dd {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.deck-progress {
+    width: 100%;
+    height: 0.75rem;
+    accent-color: var(--color-primary);
+}
+
+.deck-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+}
+
 @media (max-width: 600px) {
     .site-header {
         align-items: flex-start;

@@ -67,7 +67,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `/` | Laravel-Closure | `welcome.blade.php` | T-001/T-002 | vorhanden (Platzhalter im App-Layout) |
 | `/` | `Dashboard` | `dashboard.blade.php` | T-050 | geplant |
 | `/import` | `ImportPage` | `import-page.blade.php` | T-023 | vorhanden |
-| `/decks` | `DeckIndex` | `deck-index.blade.php` | T-030 | geplant |
+| `/decks` | `DeckIndex` | `deck-index.blade.php` | T-030 | vorhanden |
 | `/cards` | `CardIndex` | `card-index.blade.php` | T-031 | geplant |
 | `/study` | `StudyStart` | `study-start.blade.php` | T-041 | geplant |
 | `/study/{session}/classic` | `Study/Classic` | `study/classic.blade.php` | T-042 | geplant |
@@ -83,8 +83,10 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `resources/views/components/layouts/app.blade.php` | Responsives Layout mit Header, Navigation und Hauptbereich | T-002 | vorhanden |
 | `resources/views/components/card-text.blade.php` | Sicher escapeter Text mit `\n`-Umbruch und optionalem Code-Stil | T-002 | vorhanden |
 | `resources/views/livewire/import-page.blade.php` | Upload, Vorschau, Importbestätigung und Importhistorie | T-023 | vorhanden |
+| `resources/views/livewire/deck-index.blade.php` | Deckübersicht mit Kartenständen, Umbenennen und Löschen | T-030 | vorhanden |
 | `resources/css/app.css` | Design-Tokens, Hell-/Dunkelmodus und Basis-Komponenten | T-002 | vorhanden |
 | `resources/css/app.css` | Tabellen- und Import-Seitenstile | T-023 | vorhanden |
+| `resources/css/app.css` | Deckübersicht und Fortschrittsanzeige | T-030 | vorhanden |
 | `resources/css/study.css` | Flip-Animation, Matching-Animationen | T-042/T-044 | geplant |
 
 ## Datenbank
@@ -117,7 +119,8 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `tests/Unit/Enums/EnumTest.php` | Enum-Labels und Backed-Value-Auflösung | T-010 | vorhanden |
 | `tests/Unit/Import/CsvCardParserTest.php` | Parser | T-021 | vorhanden |
 | `tests/Feature/Import/ImportCardsTest.php` | Upsert, Fortschritt bleibt | T-022 | vorhanden |
-| `tests/Feature/Livewire/ImportPageTest.php` | Upload → Vorschau → Import | T-023 | geplant |
+| `tests/Feature/Livewire/ImportPageTest.php` | Upload → Vorschau → Import | T-023 | vorhanden |
+| `tests/Feature/Livewire/DeckIndexTest.php` | Deckwerte, Umbenennen, Löschen und Route | T-030 | vorhanden |
 | `tests/Feature/DatabaseSeederTest.php` | Beispieldeck importieren und wiederholt seeden | T-024 | vorhanden |
 | `tests/Unit/Study/LeitnerSchedulerTest.php` | Intervalle | T-040 | geplant |
 | `tests/Unit/Study/CardSelectorTest.php` | Auswahl/Reihenfolge | T-040 | geplant |

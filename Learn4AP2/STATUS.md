@@ -5,8 +5,8 @@
 
 ## Aktuell
 
-- **Aktuelles Ticket:** T-030 – Deck-Übersicht
-- **Nächstes Ticket:** T-030
+- **Aktuelles Ticket:** T-031 – Kartenliste mit Filter
+- **Nächstes Ticket:** T-031
 - **Blockiert:** –
 - **Letzte Sitzung:** –
 
@@ -40,7 +40,7 @@
 - [x] T-024 Seeder
 
 ### E3 – Kartenverwaltung
-- [ ] T-030 Deck-Übersicht
+- [x] T-030 Deck-Übersicht
 - [ ] T-031 Kartenliste mit Filter
 - [ ] T-032 Karte bearbeiten (P2)
 
@@ -98,6 +98,7 @@ _Agent trägt hier Fragen an Philipp ein. Format: `- [T-XXX] Frage – getroffen
 
 _Neueste oben. Eine Zeile pro Sitzung._
 
+- 2026-10-12 – T-030 abgeschlossen; Deckwerte, Fortschritt, Umbenennen und Löschen getestet. Weiter mit T-031.
 - 2026-10-12 – T-024 abgeschlossen; Beispieldeck und Wiederholbarkeit getestet. Weiter mit T-030.
 - 2026-10-12 – T-023 abgeschlossen; Upload, Vorschau, Importschritt und Historie getestet. Weiter mit T-024.
 - 2026-10-12 – T-022 abgeschlossen; Upsert-Feature-Tests, Gesamttests und Pint bestanden. Weiter mit T-023.

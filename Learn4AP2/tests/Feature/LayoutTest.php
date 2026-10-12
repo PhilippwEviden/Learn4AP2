@@ -8,6 +8,7 @@ it('renders the application layout and primary navigation', function () {
         ->assertSee('Hauptnavigation')
         ->assertSee('Dashboard')
         ->assertSee('Lernen')
+        ->assertSee('Decks')
         ->assertSee('Karten')
         ->assertSee('Import')
         ->assertSee('main-content');
