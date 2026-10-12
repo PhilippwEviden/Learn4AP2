@@ -73,7 +73,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `/decks` | `DeckIndex` | `deck-index.blade.php` | T-030 | vorhanden |
 | `/cards` | `CardIndex` | `card-index.blade.php` | T-031 | vorhanden |
 | `/cards/create`, `/cards/{card}/edit` | `CardForm` | `card-form.blade.php` | T-032 | vorhanden |
-| `/study` | `StudyStart` | `study-start.blade.php` | T-041 | geplant |
+| `/study` | `StudyStart` | `study-start.blade.php` | T-041 | vorhanden |
 | `/study/{session}/classic` | `Study/Classic` | `study/classic.blade.php` | T-042 | geplant |
 | `/study/{session}/multiple-choice` | `Study/MultipleChoice` | `study/multiple-choice.blade.php` | T-043 | geplant |
 | `/study/{session}/matching` | `Study/Matching` | `study/matching.blade.php` | T-044 | geplant |
@@ -90,11 +90,13 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `resources/views/livewire/deck-index.blade.php` | Deckübersicht mit Kartenständen, Umbenennen und Löschen | T-030 | vorhanden |
 | `resources/views/livewire/card-index.blade.php` | Kartenliste mit URL-Filtern und Pagination | T-031 | vorhanden |
 | `resources/views/livewire/card-form.blade.php` | Kartenformular und Aktionen für Lernfortschritt | T-032 | vorhanden |
+| `resources/views/livewire/study-start.blade.php` | Lernmoduswahl, Filter und Sessionstart | T-041 | vorhanden |
 | `resources/css/app.css` | Design-Tokens, Hell-/Dunkelmodus und Basis-Komponenten | T-002 | vorhanden |
 | `resources/css/app.css` | Tabellen- und Import-Seitenstile | T-023 | vorhanden |
 | `resources/css/app.css` | Deckübersicht und Fortschrittsanzeige | T-030 | vorhanden |
 | `resources/css/app.css` | Filterlayout und Kartenlisten-Pagination | T-031 | vorhanden |
 | `resources/css/app.css` | Formularlayout für Kartenbearbeitung | T-032 | vorhanden |
+| `resources/css/app.css` | Lernstart-Kacheln und Filterlayout | T-041 | vorhanden |
 | `resources/css/study.css` | Flip-Animation, Matching-Animationen | T-042/T-044 | geplant |
 
 ## Datenbank
@@ -131,6 +133,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `tests/Feature/Livewire/DeckIndexTest.php` | Deckwerte, Umbenennen, Löschen und Route | T-030 | vorhanden |
 | `tests/Feature/Livewire/CardIndexTest.php` | Filter, URL-Zustand, Kartenfelder und Pagination | T-031 | vorhanden |
 | `tests/Feature/Livewire/CardFormTest.php` | Anlegen, Bearbeiten, Validieren, Zurücksetzen und Löschen | T-032 | vorhanden |
+| `tests/Feature/Livewire/StudyStartTest.php` | Moduswahl, Filter, Vorschauzahl und Sessionstart | T-041 | vorhanden |
 | `tests/Feature/DatabaseSeederTest.php` | Beispieldeck importieren und wiederholt seeden | T-024 | vorhanden |
 | `tests/Unit/Study/LeitnerSchedulerTest.php` | Fachwechsel und Intervalle | T-040 | vorhanden |
 | `tests/Unit/Study/CardSelectorTest.php` | Filter, Auswahlreihenfolge und Limit | T-040 | vorhanden |

@@ -24,7 +24,27 @@ final class CardSelector
             return new EloquentCollection;
         }
 
-        $query = Card::query()->with('progress');
+        $query = $this->queryFor($filter)->with('progress');
+
+        $now = now();
+
+        return $query->inRandomOrder()
+            ->get()
+            ->sort(function (Card $first, Card $second) use ($now): int {
+                return $this->priority($first, $now) <=> $this->priority($second, $now);
+            })
+            ->values()
+            ->take($limit);
+    }
+
+    public function count(StudyFilter $filter): int
+    {
+        return $this->queryFor($filter)->count();
+    }
+
+    private function queryFor(StudyFilter $filter): Builder
+    {
+        $query = Card::query();
 
         if ($filter->deckIds !== []) {
             $query->whereIn('deck_id', $filter->deckIds);
@@ -63,15 +83,7 @@ final class CardSelector
             });
         }
 
-        $now = now();
-
-        return $query->inRandomOrder()
-            ->get()
-            ->sort(function (Card $first, Card $second) use ($now): int {
-                return $this->priority($first, $now) <=> $this->priority($second, $now);
-            })
-            ->values()
-            ->take($limit);
+        return $query;
     }
 
     /**

@@ -406,6 +406,63 @@ p {
     margin: 0;
 }
 
+.study-start-form {
+    margin-block: var(--space-6);
+}
+
+.study-mode-picker {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    gap: var(--space-3);
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.study-mode-picker legend {
+    margin-bottom: var(--space-3);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.study-mode-tile {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    min-height: 7rem;
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    cursor: pointer;
+}
+
+.study-mode-tile:has(input:checked) {
+    border-color: var(--color-primary);
+    outline: 2px solid var(--color-primary);
+}
+
+.study-mode-tile > span {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.study-mode-tile > span > span {
+    color: var(--color-muted);
+}
+
+.study-filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    gap: 0 var(--space-4);
+    margin-block: var(--space-6);
+}
+
+.study-match-count {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
 @media (max-width: 600px) {
     .site-header {
         align-items: flex-start;
