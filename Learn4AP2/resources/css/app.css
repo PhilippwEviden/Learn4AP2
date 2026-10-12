@@ -609,6 +609,107 @@ p {
     margin-block: var(--space-2) 0;
 }
 
+.matching-scoreboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-block: var(--space-4);
+}
+
+.matching-scoreboard p {
+    margin: 0;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    background: var(--color-accent);
+}
+
+.matching-records {
+    margin-block: var(--space-4);
+}
+
+.matching-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-6);
+}
+
+.matching-columns h2 {
+    font-size: 1.25rem;
+}
+
+.matching-items {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.matching-item {
+    min-height: 3.75rem;
+    padding: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+.matching-item:not(:disabled):hover {
+    border-color: var(--color-primary);
+    background: var(--color-accent);
+}
+
+.matching-item.is-selected {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+.matching-item.is-matched {
+    border-color: var(--color-success);
+    background: var(--color-success-surface);
+    color: var(--color-success);
+    animation: matching-success 220ms ease-out;
+}
+
+.matching-item.is-wrong {
+    border-color: var(--color-error);
+    background: var(--color-error-surface);
+    animation: matching-wrong 350ms ease-in-out;
+}
+
+.matching-item:disabled {
+    opacity: 1;
+    cursor: default;
+}
+
+.matching-feedback {
+    min-height: 1.6em;
+    margin-block: var(--space-4);
+    font-weight: 700;
+}
+
+.matching-round-result {
+    margin-block: var(--space-4);
+}
+
+@keyframes matching-success {
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+@keyframes matching-wrong {
+    25%,
+    75% {
+        transform: translateX(-0.25rem);
+    }
+
+    50% {
+        transform: translateX(0.25rem);
+    }
+}
+
 @media (max-width: 600px) {
     .site-header {
         align-items: flex-start;
@@ -637,6 +738,11 @@ p {
 
     .flashcard-face {
         padding: var(--space-4);
+    }
+
+    .matching-columns {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
     }
 }
 

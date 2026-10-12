@@ -42,7 +42,8 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `app/Enums/StudyMode.php` | classic, multiple_choice, matching, exam + deutsche Labels | T-010 | vorhanden |
 | `app/Enums/StudyQueue.php` | Auswahl fälliger, aller oder problematischer Karten | T-040 | vorhanden |
 | `app/Enums/Difficulty.php` | Stufen 1–3 + deutsche Labels | T-010 | vorhanden |
-| `app/Models/Deck.php` | Deck, hasMany Card | T-011 | vorhanden |
+| `app/Models/Deck.php` | Deck, hasMany Card und DeckMatchingRecord | T-011/T-044 | vorhanden |
+| `app/Models/DeckMatchingRecord.php` | Persönliche Zuordnungs-Bestzeit pro Deck | T-044 | vorhanden |
 | `app/Models/Card.php` | Karte, Enum-/JSON-Casts, Beziehungen und Scopes `area/topic/tag/search/due` | T-011 | vorhanden |
 | `app/Models/CardProgress.php` | Leitner-Fach, due_at, Zähler | T-011 | vorhanden |
 | `app/Observers/CardObserver.php` | legt CardProgress an | T-011 | vorhanden |
@@ -77,7 +78,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `/study` | `StudyStart` | `study-start.blade.php` | T-041 | vorhanden |
 | `/study/{session}/classic` | `Study/Classic` | `study/classic.blade.php` | T-042 | vorhanden |
 | `/study/{session}/multiple-choice` | `Study/MultipleChoice` | `study/multiple-choice.blade.php` | T-043 | vorhanden |
-| `/study/{session}/matching` | `Study/Matching` | `study/matching.blade.php` | T-044 | geplant |
+| `/study/{session}/matching` | `Study/Matching` | `study/matching.blade.php` | T-044 | vorhanden |
 | `/study/{session}/summary` | `Study/Summary` | `study/summary.blade.php` | T-045 | geplant |
 
 ## Frontend
@@ -94,6 +95,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `resources/views/livewire/study-start.blade.php` | Lernmoduswahl, Filter und Sessionstart | T-041 | vorhanden |
 | `resources/views/livewire/study/classic.blade.php` | Klassische Karteikarte mit Flip, Bewertung und Tastatursteuerung | T-042 | vorhanden |
 | `resources/views/livewire/study/multiple-choice.blade.php` | Vier Antwortoptionen mit Sofortfeedback und Erklärung | T-043 | vorhanden |
+| `resources/views/livewire/study/matching.blade.php` | Zuordnungsspiel-Runden mit Fortschritt, Feedback und Bestzeiten | T-044 | vorhanden |
 | `resources/css/app.css` | Design-Tokens, Hell-/Dunkelmodus und Basis-Komponenten | T-002 | vorhanden |
 | `resources/css/app.css` | Tabellen- und Import-Seitenstile | T-023 | vorhanden |
 | `resources/css/app.css` | Deckübersicht und Fortschrittsanzeige | T-030 | vorhanden |
@@ -102,7 +104,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `resources/css/app.css` | Lernstart-Kacheln und Filterlayout | T-041 | vorhanden |
 | `resources/css/app.css` | Flip-Karte, Fortschrittsanzeige und reduzierte Animation | T-042 | vorhanden |
 | `resources/css/app.css` | Multiple-Choice-Optionen und Feedbackfarben | T-043 | vorhanden |
-| `resources/css/study.css` | Flip-Animation, Matching-Animationen | T-042/T-044 | geplant |
+| `resources/css/app.css` | Zuordnungsspiel-Layout, Treffer- und Fehleranimationen | T-044 | vorhanden |
 
 ## Datenbank
 
@@ -113,6 +115,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `database/migrations/*_create_card_progress_table.php` | 1:1-Leitner-Fortschritt je Karte | T-011 | vorhanden |
 | `database/migrations/*_create_study_sessions_table.php` | Lernsitzungen, Filter und Zähler | T-012 | vorhanden |
 | `database/migrations/*_create_session_answers_table.php` | Antworten mit Session-/Karten-Fremdschlüsseln | T-012 | vorhanden |
+| `database/migrations/*_create_deck_matching_records_table.php` | Persönliche Bestzeit pro Deck | T-044 | vorhanden |
 | `database/migrations/*_create_imports_table.php` | Import-Protokoll und Zähler je Deck | T-012 | vorhanden |
 | `database/factories/DeckFactory.php` | Testdeck-Fabrik | T-011 | vorhanden |
 | `database/factories/CardFactory.php` | Testkarten-Fabrik | T-011 | vorhanden |
@@ -142,9 +145,9 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `tests/Feature/Livewire/Study/ClassicTest.php` | Karteikarten-Flip, Bewertung, Weiterleitung und Abbruch | T-042 | vorhanden |
 | `tests/Unit/Study/MultipleChoiceBuilderTest.php` | Mischung, Distraktor-Fallback und Deduplizierung | T-043 | vorhanden |
 | `tests/Feature/Livewire/Study/MultipleChoiceTest.php` | Antwortauswahl, Feedback, Erklärung und Sitzungsabschluss | T-043 | vorhanden |
+| `tests/Feature/Livewire/Study/MatchingTest.php` | Paare, Fehlversuche, Leitner-Wertung, Runden und Bestzeit | T-044 | vorhanden |
 | `tests/Feature/DatabaseSeederTest.php` | Beispieldeck importieren und wiederholt seeden | T-024 | vorhanden |
 | `tests/Unit/Study/LeitnerSchedulerTest.php` | Fachwechsel und Intervalle | T-040 | vorhanden |
 | `tests/Unit/Study/CardSelectorTest.php` | Filter, Auswahlreihenfolge und Limit | T-040 | vorhanden |
 | `tests/Feature/StudySessionServiceTest.php` | Sessionstart, Karten-Snapshot, Antworten und Abschluss | T-040 | vorhanden |
-| `tests/Unit/Study/MultipleChoiceBuilderTest.php` | Optionen + Fallback | T-043 | geplant |
-| `tests/Feature/Livewire/Study/*Test.php` | Lernmodi | T-042–T-045 | geplant |
+| `tests/Feature/Livewire/Study/*Test.php` | Lernmodi | T-042–T-044 vorhanden, T-045 geplant |

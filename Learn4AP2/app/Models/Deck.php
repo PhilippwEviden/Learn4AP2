@@ -19,4 +19,9 @@ class Deck extends Model
     {
         return $this->hasMany(Card::class);
     }
+
+    public function matchingRecords(): HasMany
+    {
+        return $this->hasMany(DeckMatchingRecord::class);
+    }
 }

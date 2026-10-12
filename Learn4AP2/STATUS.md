@@ -5,8 +5,8 @@
 
 ## Aktuell
 
-- **Aktuelles Ticket:** T-044 – Modus „Zuordnungsspiel“
-- **Nächstes Ticket:** T-044
+- **Aktuelles Ticket:** T-045 – Session-Zusammenfassung
+- **Nächstes Ticket:** T-045
 - **Blockiert:** –
 - **Letzte Sitzung:** –
 
@@ -49,7 +49,7 @@
 - [x] T-041 Lernstart-Seite
 - [x] T-042 Modus Klassisch
 - [x] T-043 Modus Multiple Choice
-- [ ] T-044 Modus Zuordnungsspiel
+- [x] T-044 Modus Zuordnungsspiel
 - [ ] T-045 Session-Zusammenfassung
 - [ ] T-046 Tastatur & Barrierefreiheit (P2)
 
@@ -99,6 +99,7 @@ _Agent trägt hier Fragen an Philipp ein. Format: `- [T-XXX] Frage – getroffen
 
 _Neueste oben. Eine Zeile pro Sitzung._
 
+- 2026-10-12 – T-044 abgeschlossen; Zuordnungsspiel mit Runden, Leitner-Auswertung, Bestzeiten, Fehleranimation und Tests. Gesamttests, Pint und Frontend-Build bestanden. Weiter mit T-045.
 - 2026-10-12 – T-043 abgeschlossen; Distraktor-Fallback, vier Optionen, Sofortfeedback und Tastatur getestet. Weiter mit T-044.
 - 2026-10-12 – T-042 abgeschlossen; Karten-Flip, Bewertung per Tastatur, Abbruch und Abschluss getestet. Weiter mit T-043.
 - 2026-10-12 – T-041 abgeschlossen; Moduswahl, Filter, Kartenzahl und Sessionstart getestet. Weiter mit T-042.
