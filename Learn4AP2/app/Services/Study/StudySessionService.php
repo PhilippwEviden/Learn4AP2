@@ -129,4 +129,38 @@ final class StudySessionService
             return $session->refresh();
         });
     }
+
+    public function retryIncorrect(StudySession $studySession): StudySession
+    {
+        return DB::transaction(function () use ($studySession): StudySession {
+            $session = StudySession::query()->lockForUpdate()->findOrFail($studySession->id);
+
+            if ($session->finished_at === null) {
+                throw new LogicException('Nur eine beendete Lernsitzung kann wiederholt werden.');
+            }
+
+            $cardIds = $session->answers()
+                ->where('correct', false)
+                ->orderBy('id')
+                ->pluck('card_id')
+                ->map(static fn ($cardId): int => (int) $cardId)
+                ->all();
+
+            if ($cardIds === []) {
+                throw new LogicException('Diese Lernsitzung enthält keine falsch beantworteten Karten.');
+            }
+
+            $filters = $session->filters;
+            $filters['card_ids'] = $cardIds;
+            $filters['limit'] = count($cardIds);
+
+            return StudySession::query()->create([
+                'mode' => $session->mode,
+                'filters' => $filters,
+                'started_at' => now(),
+                'correct' => 0,
+                'wrong' => 0,
+            ]);
+        });
+    }
 }

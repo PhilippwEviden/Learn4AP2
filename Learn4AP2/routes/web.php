@@ -7,6 +7,7 @@ use App\Livewire\ImportPage;
 use App\Livewire\Study\Classic;
 use App\Livewire\Study\Matching;
 use App\Livewire\Study\MultipleChoice;
+use App\Livewire\Study\Summary;
 use App\Livewire\StudyStart;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,4 @@ Route::get('/study', StudyStart::class)->name('study.start');
 Route::get('/study/{session}/classic', Classic::class)->name('study.classic');
 Route::get('/study/{session}/multiple-choice', MultipleChoice::class)->name('study.multiple-choice');
 Route::get('/study/{session}/matching', Matching::class)->name('study.matching');
+Route::get('/study/{session}/summary', Summary::class)->name('study.summary');

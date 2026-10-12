@@ -61,7 +61,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `app/Data/Question.php` | Multiple-Choice-Aufgabe mit Optionen, richtiger Antwort und Erklärung | T-043 | vorhanden |
 | `app/Services/Study/CardSelector.php` | Filtert, priorisiert und mischt Karten | T-040 | vorhanden |
 | `app/Services/Study/LeitnerScheduler.php` | Fachwechsel, Antwortzähler und Leitner-Intervalle | T-040 | vorhanden |
-| `app/Services/Study/StudySessionService.php` | Startet Sessions, speichert Antworten und beendet Sessions | T-040 | vorhanden |
+| `app/Services/Study/StudySessionService.php` | Startet Sessions, speichert Antworten, beendet Sessions und startet Wiederholungen | T-040/T-045 | vorhanden |
 | `app/Services/Study/MultipleChoiceBuilder.php` | Mischt Antwortoptionen und ergänzt fehlende Distraktoren | T-043 | vorhanden |
 | `config/app.php` → `exam_date` | AP2-Datum aus `.env` | T-050 | geplant |
 
@@ -79,7 +79,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `/study/{session}/classic` | `Study/Classic` | `study/classic.blade.php` | T-042 | vorhanden |
 | `/study/{session}/multiple-choice` | `Study/MultipleChoice` | `study/multiple-choice.blade.php` | T-043 | vorhanden |
 | `/study/{session}/matching` | `Study/Matching` | `study/matching.blade.php` | T-044 | vorhanden |
-| `/study/{session}/summary` | `Study/Summary` | `study/summary.blade.php` | T-045 | geplant |
+| `/study/{session}/summary` | `Study/Summary` | `study/summary.blade.php` | T-045 | vorhanden |
 
 ## Frontend
 
@@ -96,6 +96,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `resources/views/livewire/study/classic.blade.php` | Klassische Karteikarte mit Flip, Bewertung und Tastatursteuerung | T-042 | vorhanden |
 | `resources/views/livewire/study/multiple-choice.blade.php` | Vier Antwortoptionen mit Sofortfeedback und Erklärung | T-043 | vorhanden |
 | `resources/views/livewire/study/matching.blade.php` | Zuordnungsspiel-Runden mit Fortschritt, Feedback und Bestzeiten | T-044 | vorhanden |
+| `resources/views/livewire/study/summary.blade.php` | Ergebnis, Dauer, Fehlantworten und Wiederholungsaktion | T-045 | vorhanden |
 | `resources/css/app.css` | Design-Tokens, Hell-/Dunkelmodus und Basis-Komponenten | T-002 | vorhanden |
 | `resources/css/app.css` | Tabellen- und Import-Seitenstile | T-023 | vorhanden |
 | `resources/css/app.css` | Deckübersicht und Fortschrittsanzeige | T-030 | vorhanden |
@@ -105,6 +106,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `resources/css/app.css` | Flip-Karte, Fortschrittsanzeige und reduzierte Animation | T-042 | vorhanden |
 | `resources/css/app.css` | Multiple-Choice-Optionen und Feedbackfarben | T-043 | vorhanden |
 | `resources/css/app.css` | Zuordnungsspiel-Layout, Treffer- und Fehleranimationen | T-044 | vorhanden |
+| `resources/css/app.css` | Kennzahlen und Liste der Fehlantworten | T-045 | vorhanden |
 
 ## Datenbank
 
@@ -146,8 +148,9 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 | `tests/Unit/Study/MultipleChoiceBuilderTest.php` | Mischung, Distraktor-Fallback und Deduplizierung | T-043 | vorhanden |
 | `tests/Feature/Livewire/Study/MultipleChoiceTest.php` | Antwortauswahl, Feedback, Erklärung und Sitzungsabschluss | T-043 | vorhanden |
 | `tests/Feature/Livewire/Study/MatchingTest.php` | Paare, Fehlversuche, Leitner-Wertung, Runden und Bestzeit | T-044 | vorhanden |
+| `tests/Feature/Livewire/Study/SummaryTest.php` | Kennzahlen, Antworten, Wiederholungsfilter und Zugangsschutz | T-045 | vorhanden |
 | `tests/Feature/DatabaseSeederTest.php` | Beispieldeck importieren und wiederholt seeden | T-024 | vorhanden |
 | `tests/Unit/Study/LeitnerSchedulerTest.php` | Fachwechsel und Intervalle | T-040 | vorhanden |
 | `tests/Unit/Study/CardSelectorTest.php` | Filter, Auswahlreihenfolge und Limit | T-040 | vorhanden |
 | `tests/Feature/StudySessionServiceTest.php` | Sessionstart, Karten-Snapshot, Antworten und Abschluss | T-040 | vorhanden |
-| `tests/Feature/Livewire/Study/*Test.php` | Lernmodi | T-042–T-044 vorhanden, T-045 geplant |
+| `tests/Feature/Livewire/Study/*Test.php` | Lernmodi und Zusammenfassung | T-042–T-045 vorhanden, T-046 geplant |

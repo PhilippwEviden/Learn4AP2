@@ -678,6 +678,33 @@ p {
     animation: matching-wrong 350ms ease-in-out;
 }
 
+.summary-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+    gap: var(--space-3);
+}
+
+.summary-stats .card p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.summary-wrong-answers {
+    margin-top: var(--space-5);
+}
+
+.summary-answer-list {
+    display: grid;
+    gap: var(--space-3);
+    padding: 0;
+    list-style: none;
+}
+
+.summary-answer-list .card {
+    padding: var(--space-4);
+}
+
 .matching-item:disabled {
     opacity: 1;
     cursor: default;
