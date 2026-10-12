@@ -64,7 +64,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 
 | Route | Komponente (`app/Livewire/…`) | View (`resources/views/livewire/…`) | Ticket | Status |
 |---|---|---|---|---|
-| `/` | Laravel-Closure | `welcome.blade.php` | T-001 | vorhanden (Platzhalter) |
+| `/` | Laravel-Closure | `welcome.blade.php` | T-001/T-002 | vorhanden (Platzhalter im App-Layout) |
 | `/` | `Dashboard` | `dashboard.blade.php` | T-050 | geplant |
 | `/import` | `ImportPage` | `import-page.blade.php` | T-023 | geplant |
 | `/decks` | `DeckIndex` | `deck-index.blade.php` | T-030 | geplant |
@@ -79,10 +79,10 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 
 | Pfad | Inhalt | Ticket | Status |
 |---|---|---|---|
-| `resources/views/welcome.blade.php` | Schlichte Begrüßungsseite als Platzhalter bis zum Dashboard | T-001 | vorhanden |
-| `resources/views/components/layouts/app.blade.php` | Layout + Navigation | T-002 | geplant |
-| `resources/views/components/card-text.blade.php` | Text mit `\n` → Umbruch, Code-Stil | T-002 | geplant |
-| `resources/css/app.css` | Tokens, Basis, Komponenten | T-002 | geplant |
+| `resources/views/welcome.blade.php` | Schlichte Begrüßungsseite im App-Layout als Platzhalter bis zum Dashboard | T-001/T-002 | vorhanden |
+| `resources/views/components/layouts/app.blade.php` | Responsives Layout mit Header, Navigation und Hauptbereich | T-002 | vorhanden |
+| `resources/views/components/card-text.blade.php` | Sicher escapeter Text mit `\n`-Umbruch und optionalem Code-Stil | T-002 | vorhanden |
+| `resources/css/app.css` | Design-Tokens, Hell-/Dunkelmodus und Basis-Komponenten | T-002 | vorhanden |
 | `resources/css/study.css` | Flip-Animation, Matching-Animationen | T-042/T-044 | geplant |
 
 ## Datenbank
@@ -101,6 +101,7 @@ StudySessionService ──► session_answers + LeitnerScheduler ──► card_
 
 | Pfad | Inhalt | Ticket | Status |
 |---|---|---|---|
+| `tests/Feature/LayoutTest.php` | Layout, Text-Komponente und responsive Design-Tokens | T-002 | vorhanden |
 | `tests/Fixtures/csv/*.csv` | gültige/fehlerhafte CSVs | T-020 | geplant |
 | `tests/Unit/Enums/*` | Enum-Labels | T-010 | geplant |
 | `tests/Unit/Import/CsvCardParserTest.php` | Parser | T-021 | geplant |

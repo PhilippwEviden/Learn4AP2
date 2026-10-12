@@ -5,8 +5,8 @@
 
 ## Aktuell
 
-- **Aktuelles Ticket:** T-002 – Layout & CSS-Grundgerüst
-- **Nächstes Ticket:** T-003
+- **Aktuelles Ticket:** T-003 – Qualitäts-Scripts
+- **Nächstes Ticket:** T-010
 - **Blockiert:** –
 - **Letzte Sitzung:** –
 
@@ -24,7 +24,7 @@
 
 ### E0 – Setup
 - [x] T-001 Laravel-Projekt aufsetzen
-- [ ] T-002 Layout & CSS-Grundgerüst
+- [x] T-002 Layout & CSS-Grundgerüst
 - [ ] T-003 Qualitäts-Scripts
 
 ### E1 – Datenmodell
@@ -81,6 +81,7 @@
 | 2026-10-12 | Leitner-System mit 5 Fächern | Einfach, nachvollziehbar, reicht für Prüfungsvorbereitung |
 | 2026-10-12 | Freigabe für Composer-Abhängigkeiten in T-001 erteilt | Laravel-, Livewire- und Pest-Grundgerüst einrichten |
 | 2026-10-12 | Freigabe für Vite-NPM-Tooling in T-001 erteilt | Laravel-Assets ohne Tailwind bauen |
+| 2026-10-12 | App-Layout mit responsivem CSS und System-Farbmodus | Ohne UI-Framework, nutzbar ab 375 px |
 
 ## Offene Fragen
 
@@ -92,4 +93,4 @@ _Agent trägt hier Fragen an Philipp ein. Format: `- [T-XXX] Frage – getroffen
 
 _Neueste oben. Eine Zeile pro Sitzung._
 
-- 2026-10-12 – T-001 abgeschlossen; composer test, Pint und Vite-Build erfolgreich.
+- 2026-10-12 – T-002 abgeschlossen; Tests, Pint, Vite-Build und 375-px-Darstellung im Hell-/Dunkelmodus erfolgreich.
