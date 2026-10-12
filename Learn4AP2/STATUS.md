@@ -5,8 +5,8 @@
 
 ## Aktuell
 
-- **Aktuelles Ticket:** T-023 – Livewire-Seite „Import“
-- **Nächstes Ticket:** T-023
+- **Aktuelles Ticket:** T-024 – Seeder mit Beispieldeck
+- **Nächstes Ticket:** T-024
 - **Blockiert:** –
 - **Letzte Sitzung:** –
 
@@ -36,7 +36,7 @@
 - [x] T-020 Beispiel-CSV & Fixtures
 - [x] T-021 CsvCardParser
 - [x] T-022 ImportCardsAction
-- [ ] T-023 Import-Seite
+- [x] T-023 Import-Seite
 - [ ] T-024 Seeder
 
 ### E3 – Kartenverwaltung
@@ -98,6 +98,7 @@ _Agent trägt hier Fragen an Philipp ein. Format: `- [T-XXX] Frage – getroffen
 
 _Neueste oben. Eine Zeile pro Sitzung._
 
+- 2026-10-12 – T-023 abgeschlossen; Upload, Vorschau, Importschritt und Historie getestet. Weiter mit T-024.
 - 2026-10-12 – T-022 abgeschlossen; Upsert-Feature-Tests, Gesamttests und Pint bestanden. Weiter mit T-023.
 - 2026-10-12 – T-021 abgeschlossen; Parser-Tests und Pint bestanden. Weiter mit T-022.
 - 2026-10-12 – T-020 abgeschlossen; Beispieldatei und alle fünf geforderten Fixtures erstellt.
