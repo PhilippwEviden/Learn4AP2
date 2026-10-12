@@ -54,6 +54,8 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+    'exam_date' => env('AP2_EXAM_DATE') ?: null,
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

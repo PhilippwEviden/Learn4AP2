@@ -15,7 +15,7 @@
                     {{ config('app.name', 'AP2-Karteikarten') }}
                 </a>
                 <nav class="site-nav" aria-label="Hauptnavigation">
-                    <a href="/">Dashboard</a>
+                    <a href="{{ route('dashboard') }}">Dashboard</a>
                     <a href="{{ route('study.start') }}">Lernen</a>
                     <a href="/decks">Decks</a>
                     <a href="/cards">Karten</a>

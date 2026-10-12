@@ -5,8 +5,8 @@
 
 ## Aktuell
 
-- **Aktuelles Ticket:** T-050 – Dashboard
-- **Nächstes Ticket:** T-050
+- **Aktuelles Ticket:** T-051 – Problemkarten
+- **Nächstes Ticket:** T-051
 - **Blockiert:** –
 - **Letzte Sitzung:** –
 
@@ -54,7 +54,7 @@
 - [x] T-046 Tastatur & Barrierefreiheit (P2)
 
 ### E5 – Dashboard
-- [ ] T-050 Dashboard
+- [x] T-050 Dashboard
 - [ ] T-051 Problemkarten (P2)
 - [ ] T-052 Statistik über Zeit (P3)
 
@@ -102,6 +102,7 @@ _Neueste oben. Eine Zeile pro Sitzung._
 - 2026-10-12 – T-044 abgeschlossen; Zuordnungsspiel mit Runden, Leitner-Auswertung, Bestzeiten, Fehleranimation und Tests. Gesamttests, Pint und Frontend-Build bestanden. Weiter mit T-045.
 - 2026-10-12 – T-045 abgeschlossen; Sitzungsübersicht, Fehlantworten samt richtiger Antwort und Wiederholung mit ausschließlich falschen Karten. Gezielte Tests bestanden; weiter mit T-046.
 - 2026-10-12 – T-046 abgeschlossen; Shortcut-Dialog, Tastatursteuerung ohne Konflikte mit nativer Button-Bedienung, sichtbarer Fokus und Live-Feedback. Weiter mit T-050.
+- 2026-10-12 – T-050 abgeschlossen; Dashboard mit AP2-Countdown (Datum optional konfigurierbar), fälligen Karten, Leitner-Verteilung und den letzten fünf Sessions. Weiter mit T-051.
 - 2026-10-12 – T-043 abgeschlossen; Distraktor-Fallback, vier Optionen, Sofortfeedback und Tastatur getestet. Weiter mit T-044.
 - 2026-10-12 – T-042 abgeschlossen; Karten-Flip, Bewertung per Tastatur, Abbruch und Abschluss getestet. Weiter mit T-043.
 - 2026-10-12 – T-041 abgeschlossen; Moduswahl, Filter, Kartenzahl und Sessionstart getestet. Weiter mit T-042.

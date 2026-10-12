@@ -749,6 +749,89 @@ p {
     padding: var(--space-4);
 }
 
+.dashboard {
+    display: grid;
+    gap: var(--space-6);
+}
+
+.dashboard-heading,
+.dashboard-due,
+.dashboard-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.dashboard-heading h1,
+.dashboard-section-heading h2,
+.dashboard-exam-countdown h2,
+.dashboard-due h2,
+.dashboard-area h3 {
+    margin-top: 0;
+}
+
+.dashboard-exam-countdown,
+.dashboard-due,
+.dashboard-area {
+    padding: var(--space-4);
+}
+
+.dashboard-exam-countdown p,
+.dashboard-due p {
+    margin-bottom: 0;
+}
+
+.dashboard-due-count {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.dashboard-due-count span {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.dashboard-area-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: var(--space-3);
+}
+
+.dashboard-area h3 span {
+    display: block;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.dashboard-box-row {
+    display: grid;
+    grid-template-columns: 4.5rem minmax(0, 1fr) 2rem;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.dashboard-box-row progress {
+    width: 100%;
+    accent-color: var(--color-primary);
+}
+
+.dashboard-session-list {
+    display: grid;
+    gap: var(--space-2);
+    padding: 0;
+    list-style: none;
+}
+
+.dashboard-session-list .card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+}
+
 .matching-item:disabled {
     opacity: 1;
     cursor: default;

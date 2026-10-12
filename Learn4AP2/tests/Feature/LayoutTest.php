@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Blade;
+
+uses(RefreshDatabase::class);
 
 it('renders the application layout and primary navigation', function () {
     $this->get('/')

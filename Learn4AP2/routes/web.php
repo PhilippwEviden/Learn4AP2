@@ -2,6 +2,7 @@
 
 use App\Livewire\CardForm;
 use App\Livewire\CardIndex;
+use App\Livewire\Dashboard;
 use App\Livewire\DeckIndex;
 use App\Livewire\ImportPage;
 use App\Livewire\Study\Classic;
@@ -11,9 +12,7 @@ use App\Livewire\Study\Summary;
 use App\Livewire\StudyStart;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', Dashboard::class)->name('dashboard');
 
 Route::get('/import', ImportPage::class)->name('import');
 Route::get('/decks', DeckIndex::class)->name('decks.index');
