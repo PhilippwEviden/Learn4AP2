@@ -463,6 +463,88 @@ p {
     font-weight: 700;
 }
 
+.study-session-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+}
+
+.study-session-header h1,
+.study-session-header p {
+    margin-block: 0 var(--space-2);
+}
+
+.study-progress {
+    width: 100%;
+    height: 0.75rem;
+    margin-block: var(--space-4) var(--space-6);
+    accent-color: var(--color-primary);
+}
+
+.flashcard {
+    min-height: 22rem;
+    perspective: 1000px;
+}
+
+.flashcard-inner {
+    position: relative;
+    min-height: 22rem;
+    transition: transform 350ms ease;
+    transform-style: preserve-3d;
+}
+
+.flashcard.is-revealed .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+.flashcard-face {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    inset: 0;
+    min-height: 22rem;
+    padding: var(--space-6);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    box-shadow: 0 0.25rem 1rem rgb(18 35 48 / 8%);
+    backface-visibility: hidden;
+}
+
+.flashcard-answer {
+    transform: rotateY(180deg);
+}
+
+.flashcard-face .card-text {
+    margin-block: var(--space-4);
+    font-size: 1.25rem;
+}
+
+.flashcard-face > .btn {
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+.flashcard-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-3);
+    margin-top: auto;
+}
+
+.study-feedback {
+    min-height: 1.6em;
+    color: var(--color-success);
+    font-weight: 700;
+}
+
+.shortcut-hint {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
 @media (max-width: 600px) {
     .site-header {
         align-items: flex-start;
@@ -488,6 +570,10 @@ p {
     .card {
         padding: var(--space-4);
     }
+
+    .flashcard-face {
+        padding: var(--space-4);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -498,5 +584,26 @@ p {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+
+    .flashcard-inner {
+        transition: none;
+    }
+
+    .flashcard.is-revealed .flashcard-inner {
+        transform: none;
+    }
+
+    .flashcard-answer {
+        display: none;
+        transform: none;
+    }
+
+    .flashcard.is-revealed .flashcard-answer {
+        display: flex;
+    }
+
+    .flashcard.is-revealed .flashcard-question {
+        display: none;
     }
 }

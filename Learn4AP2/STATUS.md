@@ -5,8 +5,8 @@
 
 ## Aktuell
 
-- **Aktuelles Ticket:** T-042 – Modus „Klassisch“
-- **Nächstes Ticket:** T-042
+- **Aktuelles Ticket:** T-043 – Modus „Multiple Choice“
+- **Nächstes Ticket:** T-043
 - **Blockiert:** –
 - **Letzte Sitzung:** –
 
@@ -47,7 +47,7 @@
 ### E4 – Lernmodi
 - [x] T-040 CardSelector & LeitnerScheduler
 - [x] T-041 Lernstart-Seite
-- [ ] T-042 Modus Klassisch
+- [x] T-042 Modus Klassisch
 - [ ] T-043 Modus Multiple Choice
 - [ ] T-044 Modus Zuordnungsspiel
 - [ ] T-045 Session-Zusammenfassung
@@ -99,6 +99,7 @@ _Agent trägt hier Fragen an Philipp ein. Format: `- [T-XXX] Frage – getroffen
 
 _Neueste oben. Eine Zeile pro Sitzung._
 
+- 2026-10-12 – T-042 abgeschlossen; Karten-Flip, Bewertung per Tastatur, Abbruch und Abschluss getestet. Weiter mit T-043.
 - 2026-10-12 – T-041 abgeschlossen; Moduswahl, Filter, Kartenzahl und Sessionstart getestet. Weiter mit T-042.
 - 2026-10-12 – T-040 abgeschlossen; Auswahl, Leitner-Intervalle und Sessionablauf getestet. Weiter mit T-041.
 - 2026-10-12 – T-032 abgeschlossen; gemeinsame Importregeln, Kartenformular und Fortschrittsaktionen getestet. Weiter mit T-040.
